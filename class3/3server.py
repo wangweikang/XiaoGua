@@ -11,6 +11,8 @@
 4, 参数传递的两种方式
 
 """
+# 下面这行注释是给 atom 的 pylint 用的, 忽略
+# pylint: disable=C0103
 
 """
 url 的规范
@@ -22,12 +24,11 @@ QUERY a=b&c=d&e=1
 """
 import socket
 import urllib.parse
- # urllib.parse.unquote
-# from urllib import unquote
-# >>> unquote('%C4%A7%CA%DE')
-# '\xc4\xa7\xca\xde'
-# >>> print unquote('%C4%A7%CA%DE')
-# 魔兽
+
+from utils import log
+
+from routes import route_static
+from routes import route_dict
 
 
 # 定义一个 class 用于保存请求的数据
@@ -48,76 +49,11 @@ class Request(object):
         return f
 
 
-# 定义一个 class 用于保存 message
-class Message(object):
-    def __init__(self):
-        self.message = ''
-        self.author = ''
-
-    def __repr__(self):
-        return '{}: {}'.format(self.author, self.message)
-
 #
-message_list = []
 request = Request()
 
 
-def log(*args, **kwargs):
-    """
-    用这个 log 替代 print
-    """
-    print('log', *args, **kwargs)
-
-
-def template(name):
-    with open(name, 'r', encoding='utf-8') as f:
-        return f.read()
-
-
-def route_index():
-    """
-    主页的处理函数, 返回主页的响应
-    """
-    header = 'HTTP/1.x 210 VERY OK\r\nContent-Type: text/html\r\n'
-    body = '<h1>Hello World</h1><img src="doge.gif"/>'
-    r = header + '\r\n' + body
-    return r.encode(encoding='utf-8')
-
-
-def route_message():
-    """
-    主页的处理函数, 返回主页的响应
-    """
-    log('本次请求的 method', request.method)
-    if request.method == 'POST':
-        msg = Message()
-        form = request.form()
-        log('post', form)
-        msg.author = form.get('author', '')
-        msg.message = form.get('message', '')
-        message_list.append(msg)
-        # 应该在这里保存 message_list
-    header = 'HTTP/1.x 200 OK\r\nContent-Type: text/html\r\n'
-    # body = '<h1>消息版</h1>'
-    body = template('html_basic.html')
-    # 以<br>为分隔符,生成m的字符串
-    msgs = '<br>'.join([str(m) for m in message_list])
-    body = body.replace('{{messages}}', msgs)
-    r = header + '\r\n' + body
-    return r.encode(encoding='utf-8')
-
-
-def route_image():
-    """
-    图片的处理函数, 读取图片并生成响应返回
-    """
-    with open('doge.gif', 'rb') as f:
-        header = b'HTTP/1.x 200 OK\r\nContent-Type: image/gif\r\n\r\n'
-        img = header + f.read()
-        return img
-
-
-def error(code=404):
+def error(request, code=404):
     """
     根据 code 返回不同的错误响应
     目前只有 404
@@ -161,12 +97,14 @@ def response_for_path(path):
     没有处理的 path 会返回 404
     """
     r = {
-        '/': route_index,
-        '/doge.gif': route_image,
-        '/messages': route_message,
+        '/static': route_static,
+        # '/': route_index,
+        # '/login': route_login,
+        # '/messages': route_message,
     }
+    r.update(route_dict)
     response = r.get(path, error)
-    return response()
+    return response(request)
 
 
 def run(host='', port=3000):
@@ -175,6 +113,7 @@ def run(host='', port=3000):
     """
     # 初始化 socket 套路
     # 使用 with 可以保证程序中断的时候正确关闭 socket 释放占用的端口
+    log('start at', '{}:{}'.format(host, port))
     with socket.socket() as s:
         s.bind((host, port))
         # 无限循环来处理请求
@@ -185,20 +124,19 @@ def run(host='', port=3000):
             r = connection.recv(1000)
             r = r.decode('utf-8')
             # log('ip and request, {}\n{}'.format(address, request))
-            try:
-                # 因为 chrome 会发送空请求导致 split 得到空 list
-                # 所以这里用 try 防止程序崩溃
-                # 设置 request 的 method
-                request.method = r.split()[0]
-                path = r.split()[1]
-                # 把 body 放入 request 中
-                request.body = r.split('\r\n\r\n', 1)[1]
-                # 用 response_for_path 函数来得到 path 对应的响应内容
-                response = response_for_path(path)
-                # 把响应发送给客户端
-                connection.sendall(response)
-            except Exception as e:
-                log('error', e)
+            # 因为 chrome 会发送空请求导致 split 得到空 list
+            # 所以这里判断一下防止程序崩溃
+            if len(r.split()) < 2:
+                continue
+            path = r.split()[1]
+            # 设置 request 的 method
+            request.method = r.split()[0]
+            # 把 body 放入 request 中
+            request.body = r.split('\r\n\r\n', 1)[1]
+            # 用 response_for_path 函数来得到 path 对应的响应内容
+            response = response_for_path(path)
+            # 把响应发送给客户端
+            connection.sendall(response)
             # 处理完请求, 关闭连接
             connection.close()
 
