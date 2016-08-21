@@ -11,8 +11,6 @@
 4, 参数传递的两种方式
 
 """
-# 下面这行注释是给 atom 的 pylint 用的, 忽略
-# pylint: disable=C0103
 
 """
 url 的规范

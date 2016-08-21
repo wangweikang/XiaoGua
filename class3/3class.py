@@ -19,3 +19,5 @@ Controller
 # 把数据转换为字符串的过程叫做 序列化
 # 反之叫做 反序列化
 # JSON 是现在序列化 dict 或者 list 的一种通用格式
+
+# 视频 1.父类modle   2.debug 的思路分析

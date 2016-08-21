@@ -22,12 +22,6 @@ QUERY a=b&c=d&e=1
 """
 import socket
 import urllib.parse
- # urllib.parse.unquote
-# from urllib import unquote
-# >>> unquote('%C4%A7%CA%DE')
-# '\xc4\xa7\xca\xde'
-# >>> print unquote('%C4%A7%CA%DE')
-# 魔兽
 
 
 # 定义一个 class 用于保存请求的数据
@@ -39,6 +33,7 @@ class Request(object):
         self.body = ''
 
     def form(self):
+        #防止url 出现中文乱码 解码
         body = urllib.parse.unquote(self.body)
         args = body.split('&')
         f = {}
