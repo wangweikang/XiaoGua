@@ -180,7 +180,8 @@ def get(url):
     s = socket_by_protocol(protocol)
     s.connect((host, port))
 
-    request = 'GET {} HTTP/1.1\r\nhost: {}\r\nUser-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36\r\nCookie:udid="AACAtPIslAmPTnEy81mxWIJntUQ2BlNgCvk=|1457500433"; _zap=bca4a10c-1cb6-4c8c-bb8d-f87eea2d91c3; d_c0="AFCASFg6oQmPTvNDhkKWl_N61xsFa4_g_f8=|1461291632"; l_cap_id="OGRjMmNlYWRiMzNiNGVhYmJjODQ2MWY1Y2Y4OTk2ZDg=|1470751960|7850d72ef79a65df6111a6a531b84602bd15cb1e"; cap_id="OWEzMTEwNDM1ZTIwNDQ5YWFiMjE4ZGYxMGQ2Mzg2NjI=|1470751960|8bddcbb6ef6f112b85e11f4aeb8ff692e21b39be"; login="NTE4MTczMWYzMzQ0NDYwMzg0MmE3NzZkMGZjMGQwZjE=|1470751965|766bd5d236d509693987d62bec5d49a775a9d9c0"; q_c1=fe962860cd024849bd8e77348c3a1244|1471229647000|1449994378000; __utmt=1; __utma=155987696.1812730545.1471919125.1471919125.1471919125.1; __utmb=155987696.6.10.1471920023349; __utmc=155987696; __utmz=155987696.1471919125.1.1.utmcsr=zhihu.com|utmccn=(referral)|utmcmd=referral|utmcct=/; __utmv=155987696.100-1|2=registration_date=20130901=1^3=entry_date=20130901=1; a_t="2.0AAAAerIdAAAXAAAAqUTjVwAAAHqyHQAAAFCASFg6oQkXAAAAYQJVTd1x0VcATQmabmiOpfNuOXSKTEzDSa1Mz4i0anMEXkcyTRyyiznCmeIpLpitiw=="; z_c0=Mi4wQUFBQWVySWRBQUFBVUlCSVdEcWhDUmNBQUFCaEFsVk4zWEhSVndCTkNacHVhSTZsODI0NWRJcE1UTU5KclV6UGlB|1471920041|38087c31c823f78519f3d7c28948061a2b5c787d\r\nConnection: close\r\n\r\n'.format(path, host)
+    request = 'GET {} HTTP/1.1\r\nhost: {}\r\nUser-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36\r\nCookie:udid="AACAtPIslAmPTnEy81mxWIJntUQ2BlNgCvk=|1457500433"; _zap=bca4a10c-1cb6-4c8c-bb8d-f87eea2d91c3; d_c0="AFCASFg6oQmPTvNDhkKWl_N61xsFa4_g_f8=|1461291632"; l_cap_id="OGRjMmNlYWRiMzNiNGVhYmJjODQ2MWY1Y2Y4OTk2ZDg=|1470751960|7850d72ef79a65df6111a6a531b84602bd15cb1e"; cap_id="OWEzMTEwNDM1ZTIwNDQ5YWFiMjE4ZGYxMGQ2Mzg2NjI=|1470751960|8bddcbb6ef6f112b85e11f4aeb8ff692e21b39be"; login="NTE4MTczMWYzMzQ0NDYwMzg0MmE3NzZkMGZjMGQwZjE=|1470751965|766bd5d236d509693987d62bec5d49a775a9d9c0"; q_c1=fe962860cd024849bd8e77348c3a1244|1471229647000|1449994378000; __utmt=1; __utma=155987696.1812730545.1471919125.1471919125.1471919125.1; __utmb=155987696.6.10.1471920023349; __utmc=155987696; __utmz=155987696.1471919125.1.1.utmcsr=zhihu.com|utmccn=(referral)|utmcmd=referral|utmcct=/; __utmv=155987696.100-1|2=registration_date=20130901=1^3=entry_date=20130901=1; a_t="2.0AAAAerIdAAAXAAAAqUTjVwAAAHqyHQAAAFCASFg6oQkXAAAAYQJVTd1x0VcATQmabmiOpfNuOXSKTEzDSa1Mz4i0anMEXkcyTRyyiznCmeIpLpitiw=="; z_c0=Mi4wQUFBQWVySWRBQUFBVUlCSVdEcWhDUmNBQUFCaEFsVk4zWEhSVndCTkNacHVhSTZsODI0NWRJcE1UTU5KclV6UGlB|1471920041|38087c31c823f78519f3d7c28948061a2b5c787d\r\nConnection: close\r\n\r\n'.format(
+        path, host)
     encoding = 'utf-8'
     s.send(request.encode(encoding))
 
@@ -228,11 +229,11 @@ def download_covers(movies):
 
 def answer_from_div(div):
     a = Answer()
-    #a.author = div.xpath('.//a[@class="author-link"]')[0].text
-    #log('author,', a)
+    # a.author = div.xpath('.//a[@class="author-link"]')[0].text
+    # log('author,', a)
     if div.xpath('.//a[@class="author-link"]') == []:
-        #a.author = div.xpath('.//span[@class="name]')[0].text
-         a.author = '匿名用户'
+        # a.author = div.xpath('.//span[@class="name]')[0].text
+        a.author = '匿名用户'
     else:
         a.author = div.xpath('.//a[@class="author-link"]')[0].text
     content = div.xpath('.//div[@class="zm-editable-content clearfix"]/text()')
@@ -261,10 +262,12 @@ def main():
     # download_covers(movies)
     #
     # 知乎答案
-    url = 'https://www.zhihu.com/question/24337926'
+    #url = 'https://www.zhihu.com/question/24337926'
+    url = 'https://www.zhihu.com/question/46711189'
     #url = 'https://www.zhihu.com/question/49158482'
     answers = answers_from_url(url)
     log(answers)
+
 
 if __name__ == '__main__':
     # test()
