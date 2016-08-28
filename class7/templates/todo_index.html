@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <title>所有 TODO</title>
+    <style>
+        .status-active{
+        }
+
+        .status-done {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <form class="pure-form " action="/todo/add" method="post">
+        <input type="text" name="content">
+        <button class="pure-button pure-button-primary" type="submit">创建新 Todo</button>
+    </form>
+
+    {{todos}}
+</body>
+</html>

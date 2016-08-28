@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+    <title>编辑微博</title>
+    <style>
+        button {
+            background: red;
+        }
+        .pure-form {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <form class="pure-form pure-form-stacked" action="/weibo/update" method="post">
+        <input type="text" name="id" value="{{weibo_id}}">
+        <input type="text" name="content" value="{{weibo_content}}">
+        <button class="pure-button pure-button-primary" type="submit">编辑微博</button>
+    </form>
+</body>
+</html>
