@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <title>所有 TODO</title>
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    <style>
+        .status-active{
+        }
+
+        .status-done {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <!--<form class="pure-form " action="/todo/add" method="post">-->
+        <input id="id-input-content" type="text" name="content">
+        <button id="id-button-add" class="pure-button pure-button-primary" type="submit">创建新 Todo</button>
+    <!--</form>-->
+
+    {{todos}}
+
+    <script>
+        var log = function(){
+          // 在 js 的函数里面有一个特殊的变量 arguments
+          // 它存储了所有的参数
+          console.log(arguments)
+        }
+
+        var insertTodo = function(todo) {
+            // <p class="status-active">
+            // {} {}@{}<a href="/todo/complete?id={}">完成</a>
+            // </p>
+            // js 中的 模板字符串可以近似地实现 python 中字符串 format 函数的功能
+            // 模板字符串是用 ` 引用的
+            var id = todo.id
+            var content = todo.content
+            var time = todo.created_time
+            var template = `
+                <p class="status-active">
+                ${id} ${content}@${time}<a href="/todo/complete?id=${id}">完成</a>
+                </p>
+            `;
+            log('模板字符串', template)
+            $('body').append(template)
+        }
+
+        var sendAddRequest = function(content){
+            log('sendAddRequest', content)
+            // 在 js 中可以省略字典 key 的引号
+            var todo = {
+                content: content,
+            }
+            // 构造一个请求
+            var request = {
+                url: '/api/todo/add',
+                type: 'post',
+                data: todo,
+                success: function(r){
+                    log('成功', r)
+                    // JSON.parse 把字符串解析为 object(也就是js中的字典)
+                    var todo = JSON.parse(r)
+                    log('todo, ', todo)
+                    insertTodo(todo)
+                },
+                error: function(err){
+                    log('失败', err)
+                }
+            }
+            // 发送这个请求
+            jQuery.ajax(request)
+        }
+
+        $('#id-button-add').on('click', function(){
+            // log('点击到了 button')
+            var content = $('#id-input-content').val()
+            sendAddRequest(content)
+        })
+    </script>
+</body>
+</html>

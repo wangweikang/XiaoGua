@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 操作</title>
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+</head>
+<body>
+    <input id="id-input-username">
+    <input id="id-input-password">
+    <button id="id-button-submit" type="button">提交</button>
+    <button type="button">第二个按钮</button>
+    <script>
+        var log = function(){
+          // 在 js 的函数里面有一个特殊的变量 arguments
+          // 它存储了所有的参数
+          console.log(arguments)
+        }
+
+        var sendLoginRequest = function(username, password){
+            log('sendLoginRequest', username, password)
+        }
+        // 给 id-button-submit 绑定一个 click 事件
+        // 当 事件发生的时候，就调用函数（作为参数传过去的）
+        $('#id-button-submit').on('click', function(){
+            // log('点击到了 button')
+            var username = $('#id-input-username').val()
+            var password = $('#id-input-password').val()
+            sendLoginRequest(username, password)
+        })
+    </script>
+</body>
+</html>
