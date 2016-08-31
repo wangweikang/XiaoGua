@@ -1,25 +1,3 @@
-# coding: utf-8
-"""
-课 2 上课用品
-2016.8.11
-
-本次上课的主要内容有
-0, 请注意代码的格式和规范
-1, 规范化生成响应
-2, HTTP 头
-3, 几个常用 HTML 标签及其用法
-4, 参数传递的两种方式
-
-"""
-
-"""
-url 的规范
-第一个 ? 之前的是 path
-? 之后的是 query
-http://c.cc/search?a=b&c=d&e=1
-PATH  /search
-QUERY a=b&c=d&e=1
-"""
 import socket
 import urllib.parse
 
