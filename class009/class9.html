@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>课 9 上课内容</title>
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    <script>
+        var log = function(){
+          // 在 js 的函数里面有一个特殊的变量 arguments
+          // 它存储了函数所有的参数
+          // 注意, 这个变量只在 函数内部 才有(很野鸡, 但这就是 js)
+          console.log('log', arguments)
+        }
+    </script>
+    <style>
+        .gua-red {
+            color: red;
+        }
+
+        #id-input-username {
+            height: 100px;
+        }
+
+        time {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    HTML 和 JavaScript
+    我们使用 jQuery 学习操作 HTML 页面内的元素
+
+    0, 每个标签都有若干属性, 具体含义查询书/网页,
+        下面两个属性是每个标签都有的特殊属性
+        1. id 属性, 是一个独一无二的字符串
+            标识了页面中唯一的元素
+        2. class 属性, 用来标识一类元素
+            一个标签可以有多个 class 属性, 用空格隔开
+        例如下面的 h1 标签就有 gua-red gua-title 两个 class
+    -->
+    <h1 class='gua-red gua-title'>这是标题</h1>
+    <input id="id-input-username">
+    <input id="id-input-password">
+    <button id="id-button-submit" type="button">提交</button>
+    <button class='gua-red' type="button">第二个按钮</button>
+    <time>1月1日</time>
+    <script>
+    // 1, 选择器
+    /*
+    选择器就是用来得到页面元素的方式
+    平时主要用到三种选择器, 与 CSS 的表示方法一致
+    jQuery 选择器返回的是 jQuery 对象, 可以调用相应的方法
+        1. 普通选择器
+            下面的代码返回所有 h1 标签
+            $('h1')
+        2. 类选择器
+            下面的代码返回所有具有 gua-red class 的标签
+            用法是 .类名
+            $('.gua-red')
+        3. id 选择器
+            下面的代码返回 id 为 id-button-submit 的标签
+            用法是 #id名
+            $('#id-button-submit')
+    */
+
+
+    // 2, 声明变量 和 全局变量
+    // 声明一个变量
+    var a
+    // 声明变量并赋值
+    var b = 1
+    // 如果不声明变量就赋值, 那么它就是一个全局变量
+    // 所以一定要用 var 来声明变量
+    c = 'gua'
+    log('变量', a, b, c)
+
+
+    // 3, 定义函数 和 匿名函数
+    // js 中函数有两种定义方式
+    // 1. 直接定义函数
+    function hello() {
+        log('hello 函数')
+    }
+    hello()
+    // 2. 定义匿名函数并赋值给一个变量
+    var nihk = function() {
+        log('nihk 函数')
+    }
+    nihk()
+
+
+    // 4, 事件绑定
+    // 给 #id-button-submit 绑定一个 click 事件
+    // 当 事件发生的时候，就调用函数（作为参数传过去的）
+    $('#id-button-submit').on('click', function(){
+        log('点击到了 button')
+    })
+
+
+    // 5, 添加标签
+    // 在 body 中使用 append 方法添加一个 <h3>新标签</h3>
+    $('body').append('<h3>新标签</h3>')
+    // 此外 还有很多个添加方法可以把标签添加在不同的位置
+    // 之后会用到, 例如 prepend 方法
+    </script>
+</body>
+</html>
+
+
+<!--
+Linux 一些资料
+Linux 是 Unix 的衍生操作系统, 本质上差不多, 所以一般称作 *nix
+Linux 也可以和 Windows 一样使用图形界面
+但是一般我们都用命令行界面来操作, 这样更快更方便
+在命令行中, 提示你输入命令的字符叫做命令提示符
+普通权限的用户的提示符一般是 $
+root 用户具有 root 权限, 提示符一般是 #
+
+
+
+Linux 服务器基本用法
+1, 登录服务器
+    买的服务器实际上是一台装了 Linux 操作系统的电脑
+    我们可以通过 ssh 程序安全地登录
+    ssh 是 Secure Shell 的缩写, 是加密的通信方式
+    Windows 用户使用 putty 登录服务器
+    Mac 用户在终端中使用如下命令登录
+    ssh root@服务器地址
+    注意, ssh 默认端口是 22
+    如果你的服务器配置了其他端口为 ssh 端口
+    你需要使用下面的命令
+    ssh root@服务器地址 -p ssh端口
+
+
+2, Linux 常见命令和常用参数
+    pwd     # 显示当前目录
+    ls      # 列出当前目录下的所有目录和文件名
+    cd 目录  # 进入到目录中
+    ls -l   # 显示详细信息, 一般服务器都给你设置了 ll 快捷输入这个命令
+    ls -a   # 显示隐藏文件(Linux 中的隐藏文件就是 . 开头的文件), 一般有快捷命令 la
+    ls -al  # 组合使用参数
+    nano    # 编辑文件的编辑器
+
+
+3, 软件安装
+    在 Debian 或者 Ubuntu 中, 安装软件的命令是
+    apt-get install 软件名
+
+
+4, ssh 的加密原理——非对称加密
+    一个公钥
+    一个私钥
+
+
+5, 用 ssh-key 登录防止嗅探攻击, 提升安全性和便利性
+
+
+6, 后台运行程序
+python back.py &
+
+
+7, 杀掉进程
+➜  ~ ps ax | grep back.py
+18082 pts/0    SN     0:00 python back.py
+18088 pts/0    S+     0:00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn back.py
+➜  ~ kill 18082
+
+
+8, ss 翻墙
+# 安装 shadowsocks 其实很简单...
+pip install shadowsocks
+
+# 如果提示你 pip: command not found 说明你没有装 pip
+# 使用下面的命令安装 pip
+apt-get install python-pip
+
+# ss 的配置文件如下, 路径是 /etc/shadowsocks.json
+{
+    "server": "45.32.65.66",
+    "server_port": 8388,
+    "local_address": "127.0.0.1",
+    "local_port": 1080,
+    "password":"密码",
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open": false
+
+}
+    {
+    "server": "45.32.65.66",
+    "server_port": 8388,
+    "local_address": "127.0.0.1",
+    "local_port": 1080,
+    "password":"xyxz1401201",
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open": false
+}
+
+# 在后台运行
+ssserver -c /etc/shadowsocks.json -d start
+
+# 服务器开机自动启动, 必要性不大, 因为服务器基本不重启
+echo '/usr/bin/ssserver -c /etc/shadowsocks.json -d start' >> /etc/rc.local
+
+# 下载客户端, 就可以在电脑和手机上翻墙了
+
+-->
