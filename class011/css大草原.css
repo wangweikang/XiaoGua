@@ -1,0 +1,120 @@
+/*
+样式优先级(从高到低)
+!important
+内联样式
+<style> 中的样式
+link 中的样式
+*/
+
+
+/* 元素选择器就是元素的名字 */
+
+div {
+    /*color: white !important;*/
+    margin: 20px;
+}
+
+
+/* id 选择器是  #id */
+
+#id-div-box {
+    text-align: center;
+    color: red;
+    position: static;
+    float: left;
+}
+
+#id-div-box2 {
+    float: left;
+}
+
+#id-div-box3 {
+    float: left;
+}
+
+#id-div-box4 {
+    float: left;
+}
+
+
+/* class 选择器是   .class */
+
+.box {
+    height: 200px;
+    width: 100px;
+    background: yellow !important;
+    color: blue;
+}
+
+square {
+    position: absolute;
+    right: 10px;
+}
+
+
+/*伪类
+用冒号 : 表示
+hover focus active visited
+nth-child(even) 黑白相间的表格
+last-child 特殊处理*/
+
+p:nth-child(odd) {
+    background: lightblue;
+}
+
+p:nth-child(even) {
+    background: royalblue;
+}
+
+p:last-child {
+    color: white;
+}
+
+a:active {
+    background: lightblue;
+}
+
+a:visited {
+    background: yellow;
+}
+
+a:focus {
+    background: black;
+}
+
+a:hover {
+    background: red;
+}
+
+
+/*
+元素定位(position 属性)
+static relative absolute fixed
+非 static 元素可以用 top left bottom right 属性来设置坐标
+relative 是相对定位
+absolute 完全绝对定位, 忽略其他所有东西, 往上浮动到 relative 的元素
+fixed 基于 window 的绝对定位, 不随页面滚动改变
+
+
+
+float 元素和 clear float
+none left right
+把元素从文档流中解放, 扔到左边或者右边
+可以用来实现图文混排
+浮动元素会挤压换行
+挤压换行不一定在最左边(比如第一个元素很高)
+如果一行不够会被挤压到下一行
+right 浮动和直觉相反(前面的元素更靠右)
+
+清除浮动, 有待增加
+
+伪元素
+before
+after
+比如 content 属性
+CSS2.1 之前, 伪元素和伪类均是以一个冒号开头的
+CSS2.1 之后, 为了对伪元素和伪类加以区分，伪类继续以一个冒号开头，而伪元素改为以两个冒号开头
+为了向前兼容，浏览器同样接受 CSS2 时代已经存在的伪元素
+包括:before, :after, :first-line, :first-letter 的单冒号写法
+对于之后所有新增的伪元素必须采用双冒号写法
+*/

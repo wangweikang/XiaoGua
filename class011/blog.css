@@ -1,0 +1,71 @@
+.gua-header {
+    position: relative;
+    height: 200px;
+    background: lightblue;
+}
+
+#id-h1-title {
+    margin-bottom: 5px;
+}
+
+#id-h2-subtitle {
+    margin-top: 5px;
+    color: gray;
+}
+
+.gua-flex {
+    display: flex;
+}
+
+.gua-index {
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: 35px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.gua-index-item {
+    margin-left: 10px;
+}
+
+.gua-container {
+    display: flex;
+}
+
+.gua-content {
+    padding: 33px;
+    height: 500px;
+    flex-grow: 2;
+    background: antiquewhite;
+}
+
+.gua-sidebar {
+    height: 300px;
+    flex-grow: 1;
+    background: lightblue;
+    text-align: center;
+}
+
+.gua-avatar {
+    border-radius: 50%;
+}
+
+.gua-blog-cell {
+    border-color: gray;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    padding-bottom: 25px;
+}
+
+.gua-blog-date {
+    color: gray;
+    font-size: 20px;
+    font-family: cursive;
+}
+
+.gua-blog-title {
+    font-size: 36px;
+}

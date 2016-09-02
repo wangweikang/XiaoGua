@@ -1,0 +1,35 @@
+.zhihu-flex {
+    display: flex
+}
+
+.zhihu-header {
+    background: #0662be;
+    height: 45px;
+    padding: 8px;
+    text-align: center;
+}
+
+.zhihu-search {
+    padding-top: 10px;
+    flex-grow: 1
+}
+
+.zhihu-title {
+    padding-top: 10px;
+    height: 100%;
+    flex-grow: 4
+}
+
+.gua-index-item {
+    padding-top: 10px;
+    font-size: 24px;
+    color: white;
+    flex-grow: 2
+}
+
+#btn-qusetion {
+    background-color: #0d73bd;
+    padding: 10px;
+    color: white;
+    border-radius: 10%;
+}
