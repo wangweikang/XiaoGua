@@ -1,0 +1,96 @@
+<!--
+作业 1
+
+上课的板书链接
+http://jsbin.com/joruqobari/edit?html,css,output
+
+gua-header gua-footer 不做额外改动
+参考上课的板书使用 flex 布局实现以下设计
+
+gua-content 占一半宽度
+gua-index 在左边占据 25%
+gua-detail 在右边占据 25%
+
+作业 2
+
+在作业 1 的基础上让 gua-container 占据 80% 的宽度
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>课 10 布局练习</title>
+	<!-- 这是基础的 css 不要改动 -->
+	<style>
+		.gua-header {
+			height: 50px;
+			background: lightsteelblue;
+		}
+
+		.gua-index {
+			height: 50px;
+			background: lightblue;
+		}
+
+		.gua-content {
+			height: 80px;
+			background: lightcoral;
+		}
+
+		.gua-detail {
+			height: 30px;
+			background: lightyellow;
+		}
+
+		.gua-footer {
+			height: 50px;
+			background: lightseagreen;
+		}
+	</style>
+	<!-- 你的 css 写在这个 style 标签里 -->
+	<style>
+		.gua-container {
+			display: flex;
+			width: 80%;
+		}
+
+		.gua-index {
+			flex-grow: 1
+		}
+
+		.gua-content {
+			flex-grow: 2
+		}
+
+		.gua-detail {
+			flex-grow: 1
+		}
+	</style>
+</head>
+
+<body>
+	<div class="gua-page">
+		<div class="gua-header">
+			header
+		</div>
+
+		<div class="gua-container">
+			<div class="gua-index">
+				index
+			</div>
+			<div class="gua-content">
+				content
+			</div>
+			<div class="gua-detail">
+				detail
+			</div>
+		</div>
+
+		<div class="gua-footer">
+			footer
+		</div>
+	</div>
+</body>
+
+</html>
