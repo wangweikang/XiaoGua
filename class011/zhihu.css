@@ -2,7 +2,14 @@
     display: flex
 }
 
+.zhihu-body {
+  padding-top: 0!important;
+  margin: 0;
+}
+
+
 .zhihu-header {
+    width: 100%;
     background: #0662be;
     height: 45px;
     padding: 8px;
