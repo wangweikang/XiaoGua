@@ -17,21 +17,20 @@
 }
 
 .zhihu-search {
-    padding-top: 10px;
-    flex-grow: 1
+    flex-grow: 2
 }
 
 .zhihu-title {
     padding-top: 10px;
     height: 100%;
-    flex-grow: 4
+    flex-grow: 2
 }
 
 .gua-index-item {
     padding-top: 10px;
     font-size: 24px;
     color: white;
-    flex-grow: 2
+    flex-grow: 1
 }
 
 #btn-qusetion {
@@ -39,4 +38,8 @@
     padding: 10px;
     color: white;
     border-radius: 10%;
+}
+
+#input-search {
+  width: 200px;
 }

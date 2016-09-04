@@ -1,3 +1,9 @@
+/*
+让所有 div 都显示线框
+style 是显示的样式 dashed 是短横线
+width 是线宽
+color 是线的颜色
+*/
 div {
     outline-style: dashed;
     outline-width: 1px;
