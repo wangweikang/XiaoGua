@@ -1,0 +1,95 @@
+.v2-body {
+    margin: 0px;
+    background: #dfdfdf;
+}
+
+.v2-header {
+    background: white;
+    margin-bottom: 30px;
+    padding: 8px;
+}
+
+.v2-container {
+    display: flex;
+    background: #dfdfdf;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.v2-content {
+    margin-right: 25px;
+    background: white;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: left;
+}
+
+.v2-sidebar {
+    background: white;
+}
+
+.v2-content-list {
+    padding: 10px;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: left;
+}
+
+.v2-content-ffkg {
+    background: #f9f9f9;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 120%;
+    text-align: left;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.v2-content-item {
+    padding: 10px;
+    display: flex;
+}
+
+.v2-flex-1 {
+    flex-grow: 1;
+}
+
+.v2-flex-2 {
+    flex-grow: 2;
+}
+
+.v2-flex-3 {
+    flex-grow: 3;
+}
+
+.v2-flex-4 {
+    flex-grow: 4;
+}
+
+.v2-flex-5 {
+    flex-grow: 5;
+}
+
+.v2-flex-6 {
+    flex-grow: 6;
+}
+
+.v2-header img {
+    width: 94px;
+    height: 30px;
+    padding-left: 50px
+}
+
+a.tab {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 13px;
+    padding: 5px 8px 5px 8px;
+    margin-right: 5px;
+    border-radius: 3px;
+    color: #555;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    word-break: break-all;
+}
