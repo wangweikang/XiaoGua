@@ -22,17 +22,17 @@
     font-size: 12px;
     line-height: 150%;
     text-align: left;
+    width: 1px;
 }
 
 .v2-sidebar {
     background: white;
+    width: 1px;
 }
 
 .v2-content-list {
     padding: 10px;
-    font-size: 12px;
     line-height: 150%;
-    text-align: left;
 }
 
 .v2-content-ffkg {
@@ -47,6 +47,18 @@
 .v2-content-item {
     padding: 10px;
     display: flex;
+}
+
+.v2-content-reply {
+    width: 1px;
+}
+
+.v2-content-cell {
+    width: 1px;
+}
+
+.v2-avatar {
+    width: 1px;
 }
 
 .v2-flex-1 {
@@ -71,6 +83,10 @@
 
 .v2-flex-6 {
     flex-grow: 6;
+}
+
+.v2-flex-10 {
+    flex-grow: 10;
 }
 
 .v2-header img {
