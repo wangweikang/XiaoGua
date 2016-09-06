@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <title>注册登录页面</title>
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    <script>
+        console.log('hello js')
+    </script>
+</head>
+<body>
+    <h1>登录</h1>
+    <h2>你好 {{username}}</h2>
+    <!--<form class="pure-form pure-form-stacked" action="/login" method="post">-->
+        <input id="id-input-username" type="text" name="username" placeholder="请输入用户名">
+        <br>
+        <input id="id-input-password" name="password" placeholder="请输入密码">
+        <br>
+        <button id="id-button-login" class="pure-button pure-button-primary" type="submit">登录</button>
+        <button class="gua-button pure-button pure-button-primary" >11111</button>
+        <button class="gua-button pure-button pure-button-primary" >22222</button>
+        <div class="gua-button">也是一个按钮</div>
+   <!--</form>-->
+    <h3>{{result}}</h3>
+    <script>
+        var log = function(){
+          // 在 js 的函数里面有一个特殊的变量 arguments
+          // 它存储了所有的参数
+          console.log(arguments)
+        }
+
+        var sendLoginRequest = function(username, password){
+            log('sendLoginRequest', username, password)
+            // 在 js 中可以省略字典 key 的引号
+            var account = {
+                'username': username,
+                password: password,
+            }
+            // 构造一个请求
+            var request = {
+                url: '/login',
+                type: 'post',
+                data: account,
+                success: function(r){
+                    log('成功', r)
+                },
+                error: function(err){
+                    log('失败', err)
+                }
+            }
+            // 发送这个请求
+            jQuery.ajax(request)
+        }
+        // 给 id-button-submit 绑定一个 click 事件
+        // 当 事件发生的时候，就调用函数（作为参数传过去的）
+        $('#id-button-login').on('click', function(){
+            // log('点击到了 button')
+            var username = $('#id-input-username').val()
+            var password = $('#id-input-password').val()
+            sendLoginRequest(username, password)
+        })
+
+        $('.gua-button').on('click', function(event){
+            // event.target
+            // 下面得到被点击的对象的 jQuery 对象
+            var self = $(this)
+            log('点到了 button', self.text())
+        })
+    </script>
+</body>
+</html>

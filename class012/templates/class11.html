@@ -1,0 +1,280 @@
+<!--
+atom 插件（暂）
+atom-icons
+emacs-core-keys
+highlight-selected
+hyperclick
+pigments
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>css内容</title>
+  <!-- <link rel="stylesheet" href="class10.css"> -->
+  <style>
+  /*
+  样式优先级(从高到低)
+  !important
+  内联样式
+  <style> 中的样式
+  link 中的样式
+
+  */
+    /* 元素选择器就是元素的名字 */
+    div {
+      /*color: white !important;*/
+      margin: 20px;
+    }
+    /* id 选择器是  #id */
+    #id-div-box {
+      text-align: center;
+      color: red;
+      position: static;
+      float: left;
+    }
+    #id-div-box2 {
+      float: left;
+    }
+    #id-div-box3 {
+      float: left;
+    }
+    #id-div-box4 {
+      float: left;
+    }
+    /* class 选择器是   .class */
+    .box {
+        height: 200px;
+        width: 100px;
+        background: yellow !important;
+        color: blue;
+    }
+    square {
+      position: absolute;;
+      right: 10px;
+    }
+
+    p:nth-child(odd) {
+      background: lightblue;
+    }
+    p:nth-child(even) {
+      background: royalblue;
+    }
+    p:last-child {
+      color: white;
+    }
+
+    a:active {
+      background: lightblue;
+    }
+    a:visited {
+      background: yellow;
+    }
+    a:focus {
+      background: black;
+    }
+    a:hover {
+      background: red;
+    }
+
+    /*
+    元素定位(position 属性)
+    static relative absolute fixed
+    非 static 元素可以用 top left bottom right 属性来设置坐标
+    relative 是相对定位
+    absolute 完全绝对定位, 忽略其他所有东西, 往上浮动到 relative 的元素
+    fixed 基于 window 的绝对定位, 不随页面滚动改变
+
+
+
+    float 元素和 clear float
+    none left right
+    把元素从文档流中解放, 扔到左边或者右边
+    可以用来实现图文混排
+    浮动元素会挤压换行
+    挤压换行不一定在最左边(比如第一个元素很高)
+    如果一行不够会被挤压到下一行
+    right 浮动和直觉相反(前面的元素更靠右)
+
+    清除浮动, 有待增加
+
+    伪类
+    用冒号 : 表示
+    hover focus active visited
+    nth-child(even) 黑白相间的表格
+    last-child 特殊处理
+
+    伪元素
+    before
+    after
+    比如 content 属性
+    CSS2.1 之前, 伪元素和伪类均是以一个冒号开头的
+    CSS2.1 之后, 为了对伪元素和伪类加以区分，伪类继续以一个冒号开头，而伪元素改为以两个冒号开头
+    为了向前兼容，浏览器同样接受 CSS2 时代已经存在的伪元素
+    包括:before, :after, :first-line, :first-letter 的单冒号写法
+    对于之后所有新增的伪元素必须采用双冒号写法
+*/
+  </style>
+</head>
+<body>
+  <div class="gua-box">
+    <div id='id-div-box' class='box' style=";">
+      <p>
+      E = <span>MC</span><square>2</square>
+      <a href='#'>质能公式</a>
+    </p>
+    </div>
+
+  </div>
+
+  <div id='id-div-box2' class='box' style=";">
+    <button>盒模型2</button>
+    <br>
+    <span>居中的 inline </span>
+  </div>
+  <!-- <div id='id-div-box3' class='box' style=";">
+    盒模型3
+  </div>
+  <div id='id-div-box4' class='box' style=";">
+    盒模型4
+  </div> -->
+  <div class="gua-lines">
+    <p>
+      1
+    </p>
+    <p>
+      2
+    </p>
+    <p>
+      3
+    </p>
+    <p>
+      4
+    </p>
+  </div>
+  <a id='id-a-demo' href='#'>质能公式</a>
+
+</body>
+</html>
+
+<!--
+CSS 的使用
+内联(inline style attribute)
+<head> 标签内的 <style> 标签
+<link> 标签中的外联
+
+
+
+三种主要的选择器
+元素选择器
+class 选择器
+id 选择器
+
+
+
+样式优先级(从高到低)
+!important
+内联样式
+<style> 中的样式
+link 中的样式
+
+
+
+选择器优先级(从高到低)
+!important
+内联样式
+id 选择器
+class 选择器
+元素选择器
+
+
+
+盒模型
+内容
+padding
+border
+margin
+
+
+
+元素定位(position 属性)
+static relative absolute fixed
+非 static 元素可以用 top left bottom right 属性来设置坐标
+relative 是相对定位
+absolute 完全绝对定位, 忽略其他所有东西
+        往上浮动到非 static 的元素
+fixed 基于 window 的绝对定位, 不随页面滚动改变
+
+
+
+display 属性
+block inline inline-block
+
+block
+占一行
+拥有盒模型，可以设置尺寸
+默认 block 的标签有
+div p ul ol li h1 h2 h3 h4 h5 h6
+
+inline
+只占 content 的尺寸
+
+inline-block
+inline 布局 block 行为模式
+inline-block 对外表现为 inline，所以可以放在一行
+对内表现为 block，所以可以设置宽高
+
+
+
+overflow 属性
+visible 默认
+auto 需要的时候加滚动条
+hidden 隐藏多余元素
+scroll 就算用不着也会强制加滚动条
+
+
+
+float 元素和 clear float
+none left right
+把元素从文档流中解放, 扔到左边或者右边, 可以用来实现图文混排
+浮动元素会挤压换行
+挤压换行不一定在最左边(比如第一个元素很高)
+如果一行不够 left 会被 right 挤压到下一行
+right 浮动和直觉相反(前面的元素更靠右)
+
+清除浮动, 有待增加
+
+
+
+居中
+block 元素居中
+margin: 0 auto;
+
+inline inline-block 元素居中
+text-align: center;
+
+
+
+margin 合并
+
+
+
+伪类
+用冒号 : 表示
+hover focus active visited
+nth-child(even) 黑白相间的表格
+last-child 特殊处理
+
+
+
+伪元素
+before
+after
+比如 content 属性
+CSS2.1 之前, 伪元素和伪类均是以一个冒号开头的
+CSS2.1 之后, 为了对伪元素和伪类加以区分，伪类继续以一个冒号开头，而伪元素改为以两个冒号开头
+为了向前兼容，浏览器同样接受 CSS2 时代已经存在的伪元素
+包括:before, :after, :first-line, :first-letter 的单冒号写法
+对于之后所有新增的伪元素必须采用双冒号写法
+-->

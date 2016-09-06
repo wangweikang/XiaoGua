@@ -1,0 +1,74 @@
+/*
+让所有 div 都显示线框
+style 是显示的样式 dashed 是短横线
+width 是线宽
+color 是线的颜色
+*/
+div {
+  outline-style: dashed;
+  outline-width: 1px;
+  outline-color: red;
+}
+
+.box {
+  margin: 10px;
+  padding: 10px;
+  color: blue;
+  background: yellow;
+  border-width: 10px;
+  border-color: purple;
+  border-style: solid;
+}
+
+.center {
+  margin: 0 auto;
+}
+.container {
+  /* flex 可以让它里面的元素(这里是 content 和 sidebar)使用 flex 布局 */
+  display: flex;
+  /* 高度 100 像素 */
+  height: 100px;
+  /* 宽度 80% */
+  width: 80%;
+  /* margin: 0 auto 用来居中这个东西 */
+  /*margin: 0 auto;*/
+}
+
+/* content 占了 3 份 */
+.content {
+  flex-grow: 3;
+}
+
+/* sidebar 占了 1 份 */
+.sidebar {
+  flex-grow: 1;
+}
+
+/*
+浮动布局
+*/
+
+.float-container {
+  /*padding: 20px;*/
+  background: pink;
+}
+.float-left {
+  float: left;
+  background: cyan;
+}
+
+.float-right {
+  float: right;
+  background: red;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.space {
+  height: 100px;
+  background: lightblue;
+}

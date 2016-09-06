@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>个人主页</title>
+  <style>
+    div {
+      outline-width: 1px;
+      outline-color: red;
+      /*outline-style: dashed;*/
+    }
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .gua-line-h {
+      height: 1px;
+      background: lightgray;
+      margin: 15px 5px;
+    }
+    .gua-left {
+      float: left;
+    }
+    .gua-right {
+      float: right;
+    }
+    .gua-flex {
+      display: flex;
+    }
+    .gua-1 {
+      flex-grow: 1;
+    }
+    .gua-2 {
+      flex-grow: 2;
+    }
+    .gua-3 {
+      flex-grow: 3;
+    }
+    .gua-4 {
+      flex-grow: 4;
+    }
+    .gua-5 {
+      flex-grow: 5;
+    }
+    .gua-6 {
+      flex-grow: 6;
+    }
+    .gua-header {
+      height: 20px;
+    }
+    .gua-content {
+      width: 600px;
+      margin: 0 auto;
+    }
+    .gua-vrlj {
+      margin: 20px 0;
+    }
+    .gua-main {
+      /*flex-grow: 2;*/
+    }
+    .gua-sidebar {
+      /*flex-grow: 1;*/
+      width: 150px;
+    }
+    .gua-img-small {
+      width: 30px;
+      height: 30px;
+    }
+    .gua-img-middle {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gua-header">
+    知乎
+  </div>
+  <div class="gua-content gua-flex">
+    <div class="gua-main gua-2">
+      <div class="">
+        <div class="gua-profile gua-flex">
+          <div class="gua-profile-avatar gua-1">
+            <img src="doge.gif" alt="" />
+          </div>
+          <div class="gua-profile-details gua-5">
+            <div>
+              Doge
+            </div>
+            <div class="">
+              充满魔性的狗
+            </div>
+            <div class="">
+              软件 | 掏粪工
+            </div>
+            <div class="">
+              返回个人主页
+            </div>
+            <div class="gua-line-h">
+            </div>
+            <div class="">
+              微信公众号：doge
+              <br>
+              你一定会喜欢我
+            </div>
+          </div>
+        </div>
+        <div class="gua-profile-1 clearfix">
+          <div class="gua-left">
+            获得 100 赞同 200 感谢
+          </div>
+          <div class="gua-right">
+            <button type="button">关注</button>
+            <button type="button">私信</button>
+          </div>
+        </div>
+        <div class="gua-profile-index">
+
+        </div>
+      </div>
+      <div class="gua-vrlj">
+        <div class="gua-title">
+          专栏
+        </div>
+        <div class="gua-vrlj-preview gua-flex">
+          <div class="gua-vrlj-item gua-1 gua-flex">
+            <div class="gua-1">
+              <img src="doge1.gif" alt="" />
+            </div>
+            <div class="gua-2">
+              <div>
+                研究所
+              </div>
+              <div class="">
+                100 人关注 5 文章
+              </div>
+              <div class="">
+                发表了 5 文章
+              </div>
+            </div>
+          </div>
+          <div class="gua-vrlj-item gua-1">
+            小专栏
+          </div>
+        </div>
+      </div>
+      <div class="gua-articles">
+
+      </div>
+    </div>
+    <div class="gua-sidebar gua-1">
+      <div class="clearfix">
+        <div class="gua-left">
+          <div class="">
+            关注了
+          </div>
+          <div class="">
+            10人
+          </div>
+        </div>
+        <div class="gua-line-v">
+
+        </div>
+        <div class="gua-left gua-box">
+          <div class="">
+            关注者
+          </div>
+          <div class="">
+            100 人
+          </div>
+        </div>
+      </div>
+      <div class="gua-line-h gua-hack"></div>
+      <div class="">
+        <h6>我关注的人中，100 人也关注了他</h6>
+        <div class="">
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+          <img class='gua-img-small' src="doge2.gif" alt="" />
+        </div>
+      </div>
+      <div class="gua-line-h"></div>
+      <div class="">
+        我赞同他 100 次， 感谢 2 次
+      </div>
+      <div class="gua-line-h"></div>
+      <div class="">
+        <h3>关注了 1 个专栏</h3>
+        <div class="gua-vrlj-img">
+          <img class='gua-img-middle' src="doge2.gif" alt="" />
+          <img class='gua-img-middle' src="doge2.gif" alt="" />
+          <img class='gua-img-middle' src="doge2.gif" alt="" />
+
+        </div>
+      </div>
+      <div class="gua-line-h"></div>
+      <div class="">
+        <h3>关注了 1 个话题</h3>
+        <div class="gua-vrlj-img">
+
+          <img class='gua-img-middle' src="doge2.gif" alt="" />
+          <img class='gua-img-middle' src="doge2.gif" alt="" />
+
+        </div>
+      </div>
+      <div class="gua-line-h"></div>
+
+      <div class="">
+        <div class="">
+          举报用户
+        </div>
+        <div class="">
+          屏蔽用户
+        </div>
+      </div>
+      <div class="gua-line-h"></div>
+
+      <div class="">
+        个人主页被 100 人浏览
+      </div>
+      <div class="gua-line-h"></div>
+      <div class="">
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
