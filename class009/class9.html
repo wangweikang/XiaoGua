@@ -178,7 +178,7 @@ apt-get install python-pip
 # ss 的配置文件如下, 路径是 /etc/shadowsocks.json
 # 我的放在了/shadowsocks.json
 {
-    "server": "45.32.65.66",
+    "server": "服务器地址",
     "server_port": 8388,
     "local_address": "127.0.0.1",
     "local_port": 1080,
@@ -188,16 +188,7 @@ apt-get install python-pip
     "fast_open": false
 
 }
-    {
-    "server": "45.32.65.66",
-    "server_port": 8388,
-    "local_address": "127.0.0.1",
-    "local_port": 1080,
-    "password":"xyxz1401201",
-    "timeout":300,
-    "method":"aes-256-cfb",
-    "fast_open": false
-}
+
 
 # 在后台运行
 ssserver -c /shadowsocks.json -d start
