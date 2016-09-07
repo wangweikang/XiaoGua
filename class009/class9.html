@@ -176,6 +176,7 @@ pip install shadowsocks
 apt-get install python-pip
 
 # ss 的配置文件如下, 路径是 /etc/shadowsocks.json
+# 我的放在了/shadowsocks.json
 {
     "server": "45.32.65.66",
     "server_port": 8388,
@@ -199,10 +200,10 @@ apt-get install python-pip
 }
 
 # 在后台运行
-ssserver -c /etc/shadowsocks.json -d start
+ssserver -c /shadowsocks.json -d start
 
 # 服务器开机自动启动, 必要性不大, 因为服务器基本不重启
-echo '/usr/bin/ssserver -c /etc/shadowsocks.json -d start' >> /etc/rc.local
+echo '/usr/bin/ssserver -c /shadowsocks.json -d start' >> /etc/rc.local
 
 # 下载客户端, 就可以在电脑和手机上翻墙了
 
