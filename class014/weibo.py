@@ -46,4 +46,3 @@ def add():
         return redirect(url_for('.timeline_view', username=u.username))
     else:
         abort(401)
-
