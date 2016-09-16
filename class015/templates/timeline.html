@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间线</title>
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-size: 20px;
+        }
+        input, button {
+            font-size: 15px;
+        }
+        .gua-weibo-cell {
+            border-radius: 5px;
+            border-style: solid;
+            border-color: lightblue;
+            margin: 10px 5px;
+            padding: 5px;
+        }
+        .gua-weibo-content {
+            background: cadetblue;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .gua-comment-list {
+            background: lightsteelblue;
+            border-radius: 5px;
+            border-style: solid;
+            /* border-color: white; */
+            padding: 5px;
+            border: 0;
+            margin: 10px 0;
+        }
+        .gua-comment-cell {
+            padding: 5px;
+        }
+        .gua-comment-cell + .gua-comment-cell {
+            border-top-style: solid;
+            border-top-width: 2px;
+            border-top-color: lightgray;
+        }
+        .gua-comment-list:nth-child(0) {
+            background: red;
+        }
+        .gua-comment-cell:nth-child(0) {
+            background: red;
+        }
+        input {
+            outline: none;
+            border: none;
+            background: lightblue;
+            border-radius: 5px;
+            height: 30px;
+            padding: 0 10px;
+        }
+        button {
+            border: none;
+            background: lightpink;
+            height: 30px;
+            border-radius: 5px;
+            width: 100px;
+            /* color: black; */
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('.gua-comment-add').on('click', function(){
+                console.log('add button')
+                var button = $(this)
+                var parent = button.parent()
+                var weibo_id = parent.find('.gua-comment-weibo_id').val()
+                console.log('weibo', weibo_id)
+                var content = parent.find('.gua-comment-content').val()
+                console.log('content', content)
+
+                var commentList = parent.parent().find('.gua-comment-list')
+                console.log('commentList', commentList)
+
+                var weibo = {
+                    'weibo_id': weibo_id,
+                    'content': content
+                }
+                var request = {
+                    url: '/api/comment/add',
+                    type: 'post',
+                    data: weibo,
+                    success: function() {
+                        console.log('成功', arguments)
+                        var response = arguments[0]
+                        var comment = JSON.parse(response)
+                        var content = comment.content
+                        var cell = `
+                            <div class="gua-comment-cell">
+                                ${content}
+                            </div>
+                        `;
+                        commentList.append(cell)
+
+                    },
+                    error: function() {
+                        console.log('错误', arguments)
+                    }
+                }
+                $.ajax(request)
+            })
+        })
+    </script>
+</head>
+<body>
+    <form action="/weibo/add" method="post">
+        <input name="content">
+        <br>
+        <button>发微博</button>
+    </form>
+    <div class="gua-weibo-list">
+    {% for w in weibos %}
+        <div class="gua-weibo-cell">
+            <div class="gua-weibo-content">
+            {{ w.content }} @ {{ w.created_time }}
+            </div>
+            <div class="gua-comment-list">
+                {% for c in w.comments %}
+                <div class="gua-comment-cell">
+                    {{ c.content }}
+                </div>
+                {% endfor %}
+            </div>
+            <!--<form action="/comment/add" method="post">-->
+            <div class="gua-comment-form">
+                <input class="gua-comment-weibo_id" type="hidden" name="weibo_id" value="{{ w.id }}">
+                <input class="gua-comment-content" name="content">
+                <button class="gua-comment-add">评论</button>
+            </div>
+                <!--</form>-->
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>
