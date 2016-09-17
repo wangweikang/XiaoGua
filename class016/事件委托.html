@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+    <script>
+        var __main = function() {
+            // 给一个元素绑定一个点击事件
+            // 事件发生的时候执行回调函数
+            $('#id-button-name').on('click', function(){
+                console.log('click #id-button-name');
+
+                var msg = '你好';
+                var t = `
+                    <div class="gua-message-cell">
+                        ${msg}
+                        <button class='gua-delete'>删除</button>
+                    </div>
+                `;
+                // 上面的模板字符串会根据变量生成字符串
+                console.log('es6 模板字符串', t);
+                // 然后 append 到 body 中
+                $('.gua-message-container').append(t);
+
+            });
+
+            // 给删除按钮添加绑定事件
+            $('.gua-delete').on('click', function(){
+                // 浏览器终端中才能看到的输出
+                console.log('点击了删除按钮')
+            })
+
+            // 事件委托
+            // 新添加的按钮不能响应事件，解决方案是事件委托
+            // 因为有的元素是事后动态添加的, 在第一次绑定的时候他们并未存在
+            // 所以要把事件绑定在一个预先存在的父节点中, 这个概念叫事件委托
+            // 所以, 所有动态添加的元素的事件都应该这样写
+            // 注意看, 这里是把事件绑定在 body 中
+            // 但是 on 函数多了第二个参数, 也就是要响应事件的元素, 这里是 .gua-delete
+            $('body').on('click', '.gua-delete', function(){
+                console.log('事件委托的点击事件')
+            });
+        };
+
+        // 这句话在整个文档加载完毕后才会执行
+        $(document).ready(function(){
+            console.log('ready');
+            __main();
+        });
+    </script>
+</head>
+<body>
+    <button id="id-button-name">添加留言记录</button>
+    <div class="gua-message-container">
+        <div class="gua-message-cell">
+            测试
+            <button class='gua-delete'>删除</button>
+        </div>
+    </div>
+</body>
+</html>
