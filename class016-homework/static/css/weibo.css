@@ -1,0 +1,80 @@
+body {
+    margin:20px;
+}
+.sub {
+    margin-top:0px;
+}
+.wei {
+    width:80%;
+    height:30px;
+    margin-bottom:10px;
+}
+.name {
+    width:10%;
+    height:30px;
+    margin-bottom:10px;
+}
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+.com {
+    float:right;
+}
+.in tr:nth-child(2n-1) td {
+    background-color:lightblue;
+}
+.in tr:nth-child(2n) td {
+    background-color:pink;
+}
+.left {
+    float:left;
+}
+.right {
+    float:right;
+}
+input.m {
+    width:60%;
+    display: inline-block;
+    margin-right: 5px;
+}
+input.s {
+    width:20%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.out {
+    width:100%;
+    max-width: 1200px;
+}
+.in {
+    font-size:14px;
+    width:100%;
+}
+.in .comment {
+    width:40%;
+}
+.in td {
+    padding: 0 1em;
+}
+.in .name {
+    width:20%;
+}
+.in .time {
+    width:30%;
+}
+.comment-div {
+  padding: 5px 0;
+}
+.comment-form {
+  padding: 5px 0;
+}
+.span-margin {
+  display: inline-block;
+  margin: 0 10px;
+
+}
+.hide {
+  display: none;
+}
