@@ -58,6 +58,7 @@ $(document).ready(function(){
 
   // 给按钮绑定添加 weibo 事件
   $('#id-button-weibo-add').on('click', function(){
+
     var weibo = $('#id-input-weibo').val()
     log('weibo,', weibo)
     var form = {
