@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/pure-min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/js/weibo.js"></script>
+    <title>三千院和他的朋友们</title>
+</head>
+<body>
+  <div class="head">
+    <div class="left title">三千院和他的朋友们</div>
+    <div class="right">
+      <span><a href="/blog">三千院的博客</a></span>
+      <span><a href="/weibo">微博</a></span>
+      <span><a href="/profile">个人资料</a></span>
+    </div>
+  </div>
+  <div class="background">
+    <div class="height-20"></div>
+    <div class="container clearfix">
+
+      <div class="right-panel right">
+        <div class="box name-board">
+          <img class="avatar-l name-board-avatar" src="http://vip.cocode.cc/uploads/avatar/138.jpeg" alt="" />
+          <div class="personal-des">
+            Hello, I am 3000
+          </div>
+          <div class="personal-des">
+            Welcome here
+          </div>
+          <div class="personal-des">
+            Please write some comments
+          </div>
+          <div class="personal-des">
+            Have a nice day!
+          </div>
+        </div>
+        <div class="height-20"></div>
+        <div class="box link-board">
+          <pre class="poem">
+Down by the salley gardens
+My love and I did meet
+She passed the salley gardens
+With little snow-white feet
+She bid me take love easy
+As the leaves grow on the tree
+But I being young and foolish
+With her would not agree
+In a field by the river
+My love and I did stand
+And on my leaning shoulder
+She laid her snow-white hand
+She bid me take life easy
+As the grass grows on the weirs
+But I was young and foolish
+And now I'm full of tears
+Down by the salley gardens
+My love and I did meet
+She passed the salley gardens
+With little snow-white feet
+She bid me take love easy
+As the leaves grow on the tree
+But I being young and foolish
+With her would not agree
+          </pre>
+        </div>
+      </div>
+
+
+
+      <div class="main-panel">
+
+        <div class="box">
+          {% for b in blogs %}
+            <div class="cell item">
+              <div class="blog-head">
+                <span class="blog-title">{{ b.title }}</span>
+                <span class="blog-name">by:{{ b.name }}</span>
+                <span class="blog-time">{{ b.created_time }}</span>
+              </div>
+              <pre class="blog-content">{{ b.content }}</pre>
+              <div class="blog-foot">
+                <a href="#" class="blog-com">评论({{ b.comments_num }})</a>
+              </div>
+              <div class="blog-comment hide">
+                <div class="comment-list">
+                {% for c in b.comment %}
+                  <div class="cell-inner item">
+                    <img src="{{ c.avatar }}" class="avatar-s">
+                    <span class="comment">{{ c.comment }}</span>
+                    <span class="time right span-margin">{{ c.created_time }}</span>
+                    <span class="name right span-margin">by:{{ c.name }}</span>
+                  </div>
+                {% endfor %}
+                </div>
+                <!-- <form action="/blog/comment" method="post" class="comment-form"> -->
+                <div class="comment-form">
+                  <input type="hidden" name="blog_id" class="comment-blog_id" value="{{ b.id }}">
+                  <input name="comment" class="left m comment-content" placeholder="Comment">
+                  <button class="blog-comment-add">发表</button>
+                </div>
+                <!-- </form> -->
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="height-20"></div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+</body>
+</html>
