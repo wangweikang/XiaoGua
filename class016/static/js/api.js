@@ -6,10 +6,12 @@ api.ajax = function(url, method, form, success, error) {
     url: url,
     type: method,
     data: form,
+
     success: function(response){
       var r = JSON.parse(response)
       success(r)
     },
+
     error: function(err){
       log('网络错误', error)
       var r = {
