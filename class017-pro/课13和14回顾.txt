@@ -1,0 +1,66 @@
+数据库的知识在 14 课，下面的内容只讲如何用 SQLAlchemy 操作使用数据库
+
+
+gualib.py 包含了 log 函数
+
+
+message.py 包含了下面的功能（注意 message.py 是单独运行的程序）
+	定义路由和路由函数
+	使用模板生成页面
+
+
+main.py 包含了下面的功能
+	蓝图的概念和使用
+	自定义错误页面
+
+
+models.py 包含了数据库的表定义
+
+
+下面 3 个文件分别包含了各自的蓝图
+todo.py
+user.py
+weibo.py
+
+
+静态文件 css js 图片等放在 static 目录中
+在 html 模板中的 url 是 /static/路径
+
+
+蓝图是 flask 提供的把相同的路由函数放在一个文件中的方法
+在主程序中 import 蓝图并且使用下面的函数来注册
+app.register_blueprint(user_routes)
+这样的好处是能分离路由，模块化代码
+
+
+
+
+在 todo.py 的最下方有如下作业
+
+TODO 的完善，增加一个修改 todo 的功能
+1，todo_index.html 模板中增加一个链接
+	链接跳转到 /todo/edit/<todo_id>
+	注意，/todo 前缀在蓝图注册的时候添加了所以不要重复写
+2，/todo/edit/<todo_id> 返回一个 todo_edit.html 页面
+	修改的表单发送到 /todo/update/<todo_id>
+3，新增一个 /todo/update/<todo_id> 路由
+	接受一个表单包含了修改后的 todo.task
+	修改这个 todo 并 redirect 到 /todo
+
+
+
+
+
+SQLAlchemy 使用
+
+通过 id 查询数据
+u = User.query.get(1)
+
+通过某个字段查询，这里是 username 为 gua 的数据
+filter_by 返回的数据是一个 list
+所以用 first 取出第一个数据
+如果数据不存在， first 返回 None
+u = User.query.filter_by(username='gua').first()
+
+查询 user_id 为 1 的所有数据
+todos = Todo.query.filter_by(user_id=1).all()

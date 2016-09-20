@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 指明字符编码为 utf-8 否则中文会乱码 -->
+    <meta charset="utf-8">
+    <title>留言板</title>
+</head>
+<body>
+    <h1>留言板</h1>
+    <!--
+    form 中 type="submit" 的 button 会触发浏览器发送数据到服务器
+    form 的 action 属性指定了发送的 path
+    form 的 method 属性指定了发送的方法，通常是 post 或者 get
+
+    在我们这个例子中，服务器处理了请求后，返回了一个 302 重定向
+    所以浏览器就刷新到了 302 给的地址（在本例中也就是还是这个页面）
+
+    假设你输入 gua 点击按钮
+    最终浏览器发送数据的方式是把 msg_post=gua 放入 HTTP body 中
+    这种编码方式叫做 urlencode
+    -->
+    <form action="/message/add" method="post">
+        这是一个发送 POST 请求的表单
+        <br>
+        <textarea name="msg_post"></textarea>
+        <br>
+        <button type="submit">用 POST 提交表单</button>
+    </form>
+    <!--
+    下面是使用模板的办法
+    注意 flask 使用的模板是 jinja2
+    flask 用 render_template 传递参数给 jinja2
+    然后 jinja2 生成最终的 html 页面返回给 flask
+    flask 用返回的 html 作为 HTTP body 组装一个 HTTP 响应返回给浏览器
+    -->
+    {# 这是 Jinja2 模板的注释语法，这样的注释并不会在生成的 HTML 代码中出现 #}
+    {# {% %} 里面的是语句 #}
+    <!--
+    常用的语句是 for . in 循环
+    -->
+    {# {{ }} 里面的是引用变量 #}
+    <!-- 注意 m 本身是一个字典，但是你可以用 . 的语法来引用 -->
+    <!-- 这是 jinja2 模板的功能 -->
+    {% for m in messages %}
+        <div>{{ m.content }}</div>
+    {% endfor %}
+</body>
+</html>

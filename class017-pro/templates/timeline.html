@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间线</title>
+</head>
+<body>
+    <form action="/weibo/add" method="post">
+        <input name="content">
+        <br>
+        <button>发微博</button>
+    </form>
+    {% for w in weibos %}
+        <div>
+            {{ w.content }} @ {{ w.created_time }}
+            <form action="/comment/add" method="post">
+                <input type="hidden" name="weibo_id" value="{{ w.id }}">
+                <input name="content">
+                <button>评论</button>
+            </form>
+        </div>
+    {% endfor %}
+</body>
+</html>
