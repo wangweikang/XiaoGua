@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/pure-min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <title>注册与登录</title>
+</head>
+<body>
+  <div class="head">
+    <div class="left title">三千院和他的朋友们</div>
+    <div class="right">
+      <span><a href="/blog">三千院的博客</a></span>
+      <span><a href="/weibo">微博</a></span>
+      <span><a href="/profile">个人资料</a></span>
+    </div>
+  </div>
+<div class="background">
+  <div class="content clearfix profile">
+
+    <div class="box user-box reg-box">
+      <form action="/user/register" method="post">
+          <input name="username">
+          <br>
+          <input name="password">
+          <button>注册</button>
+      </form>
+      <div class="des">
+        没有账号，点击注册！
+      </div>
+    </div>
+
+    <div class="box user-box login-box">
+    <form action="/user/login" method="post">
+        <input name="username">
+        <br>
+        <input name="password">
+        <button>登录</button>
+    </form>
+    <div class="des">
+      已有账号，点击登录！
+    </div>
+    </div>
+
+  </div>
+  </div>
+</body>
+</html>
