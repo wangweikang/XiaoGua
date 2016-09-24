@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>下拉菜单基础</title>
+    </head>
+    <style>
+        /*
+        下拉菜单基础
+        1, content 默认是 display: none
+        2, 在 dropdown:hover 的时候, 设置 content 显示
+        */
+        .gua-dropdown-content {
+            /*
+            我们可以先布局好菜单的显示再设置 none, 方便开发调试
+            */
+            display: none;
+            /*
+            为何用 absolute
+            因为我们不希望它对页面布局产生影响
+            */
+            position: absolute;
+            background-color: black;
+        }
+
+        .gua-dropdown {
+            /* 因为 content 需要 absolute 定位, 所以作为父节点必须不是 static */
+            position: relative;
+        }
+
+        /*
+        这是一个组合选择器
+        选中的是 gua-dropdown:hover 的子元素 gua-dropdown-content
+        也就是说 dropdown:hover 的时候, content 才会有这个样式
+        */
+        .gua-dropdown:hover .gua-dropdown-content {
+            display: block;
+        }
+
+        /* 用组合选择器美化一下菜单 */
+        .gua-dropdown-content a {
+            display: block;
+            padding: 5px 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .gua-dropdown-content a:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+    <body>
+        <div class="gua-dropdown">
+            <a class="gua-dropdown-title" href="#">下拉菜单</a>
+            <div class="gua-dropdown-content">
+                <a class="gua-nav-item" href="#">博客</a>
+                <a class="gua-nav-item" href="#">宝库</a>
+                <a class="gua-nav-item" href="#">关于</a>
+            </div>
+        </div>
+    </body>
+</html>

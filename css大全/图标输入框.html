@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>图标输入框 </title>
+</head>
+<style>
+    /*
+        图标输入框
+        1, input 设置背景图片
+        2, 设置 padding-left 给图片腾出空间
+        注意, 你必须在目录下放一个 icon.png 图片, 尺寸最好是 32*32
+        */
+
+    input.gua-icon-input {
+        /* 设置外观 */
+        border: 1px solid red;
+        font-size: 20px;
+        /* 这个缩写的含义请在浏览器中用检查器看 */
+        background: url(icon.png) no-repeat scroll 4px;
+        /* 下面这样可以让图片居中 */
+        height: 40px;
+        padding-left: 40px;
+    }
+</style>
+
+<body>
+    <input class="gua-icon-input" type="text" name="name" value="">
+</body>
+
+</html>
