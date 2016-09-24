@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>1, 最基础的导航栏样式 - 导航栏 css 大全</title>
+    </head>
+    <style>
+        /*
+        1, 设置导航栏背景色为黑色
+        2, 设置链接的 display color padding 居中, 删除下划线
+        3, 给链接设置 hover 的颜色和背景色
+        */
+        nav {
+            background: black;
+        }
+        /* 组合选择器, 选中 class 为 gua-nav-item 的 a 标签*/
+        /* 当然, 不写 a 也是一样的 */
+        a.gua-nav-item {
+            /* 设置 inlin-block, 这样才能设置 a 的尺寸和 padding */
+            display: inline-block;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        /* 鼠标移上去的时候, 设置新颜色 */
+        .gua-nav-item:hover {
+            background-color: white;
+            color: black;
+            /* 鼠标指针变为链接手 */
+            cursor: pointer;
+        }
+    </style>
+    <body>
+        <!--
+        nav 是 HTML5 里面的新标签, 和 div 一样的, 默认 display: block
+        这里当然用 div 也是完全没问题的, 只是你要加 class(不然怎么设置专有样式呢?)
+        但是在 HTML5 中你完全可以用任意自定义标签, 自己设置它的样式就可以了
+        -->
+        <nav>
+          <a class="gua-nav-item" href="#">首页</a>
+          <a class="gua-nav-item" href="#">博客</a>
+          <a class="gua-nav-item" href="#">宝库</a>
+          <a class="gua-nav-item" href="#">关于</a>
+        </nav>
+    </body>
+</html>
