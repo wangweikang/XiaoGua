@@ -187,7 +187,6 @@ def test_parsed_url():
         ('http://g.cn/', (http, host, 80, path)),
         ('http://g.cn:90', (http, host, 90, path)),
         ('http://g.cn:90/', (http, host, 90, path)),
-        #
         ('https://g.cn', (https, host, 443, path)),
         ('https://g.cn:233/', (https, host, 233, path)),
     ]
