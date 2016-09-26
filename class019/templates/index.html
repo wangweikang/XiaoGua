@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    p {
+        background: red;
+    }
+  </style>
+{% endblock %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    <h1>index</h1>
+    <p>
+        填充模板内容
+    </p>
+{% endblock %}

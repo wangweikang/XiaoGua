@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+        {% block title %}{% endblock %} - 炼瓜研究所
+    </title>
+    {% block head %}
+        <script>
+            console.log('父模板的 log')
+        </script>
+    {% endblock %}
+  </head>
+<body>
+  <div>{% block content %}{% endblock %}</div>
+  <div>
+    {% block footer %}
+        Copyright 2016 by <a href="/">gua</a>.
+    {% endblock %}
+  </div>
+</body>
+</html>

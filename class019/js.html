@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>js 的天坑</title>
+  </head>
+  <body>
+    <!-- 5, js 的 this 天坑和事件对象和 js 文件引用 -->
+    <button type="button" id="id-button-test">测试js</button>
+    <script>
+        var log = function(){
+          console.log.apply(console, arguments)
+        }
+
+        var button = document.getElementById('id-button-test')
+        button.addEventListener('click', function(event){
+            log('click log')
+            log(event.target)
+        })
+        var foo = function() {
+          log(this)
+          gua = 1
+        }
+
+
+        // apply 和 call 和 bind
+        a = console.log
+        a.apply(console, [1, 2, 3])
+        a.call(console, 1, 2, 3, 4)
+
+        b = console.log.bind(console)
+        b = a.bind(console)
+        b(1, 2, 3)
+
+        t = Turtle()
+        t.forward(100)
+
+        var forward = function(){
+          t.forward.apply(t, arguments)
+        }
+
+        var goto = function(){
+          t.goto.apply(t, arguments)
+        }
+
+        // 简单的方式是这样的
+        var methods = [
+            'forward',
+            'backward',
+            'goto',
+            'left',
+            'right',
+            'setHeading',
+            'heading',
+            'towards',
+            'penup',
+            'pendown',
+            'setPenSize',
+            'setPenColor',
+            'show',
+            'hide',
+            'setDelay',
+        ]
+        for (var i = 0; i < methods.length; i++) {
+            var m = methods[i]
+            window[m] = t[m].bind(t)
+        }
+    </script>
+  </body>
+</html>
