@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nodes</title>
+</head>
+<body>
+    <div>
+        <form action="{{ url_for('.add') }}" method="post">
+            <input type="text" name="name" placeholder="输入 name">
+            <button>Add</button>
+        </form>
+    </div>
+
+{% for n in node_list %}
+    <div>
+        <a href="{{ url_for('.edit', id=n.id) }}">修改</a>
+        <a href="{{ url_for('.delete', id=n.id) }}">删除</a>
+        <a href="{{ url_for('.show', id=n.id) }}">{{ n.name }}</a>
+    </div>
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ topic.title }}</title>
+</head>
+<body>
+    <div class="">
+        <a href="{{url_for('node.show', id=topic.node.id)}}">{{ topic.node.name }}</a>
+    </div>
+    <div>
+        <h1>{{ topic.title }}</h1>
+        <p>
+            {{ topic.content}}
+        </p>
+    </div>
+</body>
+</html>
