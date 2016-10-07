@@ -40,7 +40,7 @@ while True:
         break
     response += r
     # 输出响应的数据, bytes 类型
-    # print('响应', r.decode('utf-8'))
+    print('响应', r.decode('utf-8'))
     # 转成 str 再输出
     # print('响应的 str 格式', r.decode('utf-8'))
-print('响应', response.decode('utf-8'))
+#print('响应', response.decode('utf-8'))
