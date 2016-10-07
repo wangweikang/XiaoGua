@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+    nodes
+{% endblock %}
+
+{% block content %}
+    <div>
+        <form action="{{ url_for('.add') }}" method="post">
+            <input type="text" name="name" placeholder="输入 name">
+            <input type="text" name="description" placeholder="输入 description">
+            <button>Add</button>
+        </form>
+    </div>
+
+    {% for node in node_list %}
+    <div>
+        {{ node.id }} : {{ node.name }}
+    </div>
+    {% endfor %}
+{% endblock %}
+
+
+{% block sidebar %}
+    <h1>hello </h1>
+    <a href="/node/new">发布新帖子</a>
+{% endblock %}
+

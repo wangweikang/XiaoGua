@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    发帖
+{% endblock %}
+
+{% block content %}
+    {% for t in node.topics %}
+    <div>
+        <a href="{{ url_for('topic.show', id=t.id) }}">
+            {{ t.title }}
+        </a>
+    </div>
+    {% endfor %}
+{% endblock %}
+
+
+

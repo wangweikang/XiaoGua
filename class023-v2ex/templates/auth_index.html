@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>auth</title>
+</head>
+<body>
+    <div>
+        <form action="{{ url_for('.login') }}" method="post">
+            <input type="text" name="username" placeholder="输入 name">
+            <input type="text" name="password" placeholder="输入 name">
+            <button>login</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+    发帖
+{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('.add') }}" method="post">
+        <input type="text" name="node_id" placeholder="输入 node id">
+        <br>
+        <input type="text" name="title" placeholder="输入 title">
+        <br>
+        <textarea type="text" name="content" placeholder="输入 content"></textarea>
+        <br>
+        <button>Add</button>
+    </form>
+{% endblock %}
+
+
+{% block sidebar %}
+    <h1>hello </h1>
+    <a href="/node/new">发布新帖子</a>
+{% endblock %}
+

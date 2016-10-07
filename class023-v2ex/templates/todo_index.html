@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo</title>
+    <style>
+        form {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="{{ url_for('.add') }}" method="post">
+            <input type="text" name="task" placeholder="输入 todo">
+            <button>Add</button>
+        </form>
+    </div>
+
+{% for todo in todo_list %}
+    <div>
+        <a href="{{ url_for('.edit', id=todo.id) }}">修改</a>
+        <a href="{{ url_for('.delete', id=todo.id) }}">删除</a>
+        {{ todo.task }}
+    </div>
+{% endfor %}
+
+</body>
+</html>

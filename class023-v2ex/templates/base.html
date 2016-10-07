@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bbs.css') }}">
+    {% block css %}{% endblock %}
+
+    <script src="/static/js/jquery-3.0.0.min.js"></script>
+    {% block script %}{% endblock %}
+</head>
+<body>
+    <div class="bbs-top">
+        <a href="/node/1">主页</a>
+        <nav class="bbs-menu">
+            <a class="gua-nav-link gua-active" href="/">首页</a>
+            <a class="gua-nav-link" href="/topics/333">注册</a>
+            <a class="gua-nav-link" href="/topics/310">登录</a>
+        </nav>
+    </div>
+    <div class="bbs-main">
+        <div class="bbs-content bbs-box">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="bbs-sidebar bbs-box">
+            <a href="/topic/new">发布新帖子</a>
+            {% block sidebar %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <div class="bbs-bottom">
+        <div class="bbs-bottom-content bbs-content-size">
+            <div class="bbs-bottom-nav">
+                <a href="#">关于</a>
+                <span>&nbsp;·&nbsp;</span>
+                <a href="#">FAQ</a>
+                <span>&nbsp;·&nbsp;</span>
+                <a href="#">鸣谢</a>
+                <span>&nbsp;·&nbsp;</span>
+                <a href="#">7人在线</a>
+            </div>
+            <div class="bbs-bottom-about">
+                创意工作者们的社区<br>World is powered by solitude
+            </div>
+        </div>
+    </div>
+</body>
+</html>
