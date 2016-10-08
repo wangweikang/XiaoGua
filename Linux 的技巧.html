@@ -1,0 +1,41 @@
+# 安装 mysql 和 pymysql
+apt-get install mysql-server
+pip3 install pymysql
+
+
+# 项目里面设置 SQLALCHEMY_DATABASE_URI 为下面的值
+'mysql+pymysql://用户名:密码@localhost/数据库名'
+
+# 注意 model 里的 db.String 定义要有长度, 例如
+username = db.Column(db.String(100))
+
+
+# 打开 mysql 并创建数据库
+mysql -u root -p
+
+create database 数据库名;
+输入 exit 或者用快捷键 C-d 退出
+
+
+
+
+# 编写 wsgi.py 文件, 放到项目文件夹中
+# 内容如下
+# 这一行理论上没啥用, 放这里也行
+#!/usr/bin/env python3
+
+# 下面这 4 行代码是标准套路
+import sys
+from os.path import abspath
+from os.path import dirname
+
+# 各项目通用
+sys.path.insert(0, abspath(dirname(__file__)))
+
+
+from app import configured_app
+
+# 这里名字一定要是 application, 规定
+application = configured_app()
+
+# 结束
