@@ -1,11 +1,3 @@
-# redis 的详细介绍和其他数据的比较
-# http://redisinaction.com/preview/chapter1.html
-
-
-
-import redis
-
-
 def log(*args):
     print(*args)
 
