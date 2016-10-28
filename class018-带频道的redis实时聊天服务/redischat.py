@@ -29,7 +29,7 @@ chat_channel = 'chat'
 
 def stream():
     '''
-    监听 redis 广播并 sse 到客户端
+    监听 redis 广播并 sse 到客户端（服务器发送事件,使用长链接进行通讯）
     '''
     # 对每一个用户 创建一个[发布订阅]对象
     pubsub = red.pubsub()
