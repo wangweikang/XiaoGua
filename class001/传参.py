@@ -6,4 +6,4 @@ def f1(arg1, arg2, arg3=1, arg4=2, *args, **kwargs):
     print(kwargs)
 
 
-f1(1, 2, 3, 4, 5, 6, 7, 8)
+f1(1, 2, 3, 4, 5, 6, 7, 8, a=9)
