@@ -19,3 +19,5 @@ Python OK
 ## [redis 的详细介绍和其他数据的比较](http://redisinaction.com/preview/chapter1.html)
 
 ## [redis 快速](http://www.yiibai.com/redis/redis_quick_guide.html)
+
+## [Python技术文章的收集](http://pyzh.readthedocs.io/en/latest/index.html)
