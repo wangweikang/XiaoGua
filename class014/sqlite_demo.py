@@ -42,7 +42,7 @@
 """
 INSERT INTO
     `users`(`id`,`username`,`password`,`email`)
-VALUES \
+VALUES
     (2,'','',NULL);
 
 UPDATE `users` SET `username`=? WHERE `_rowid_`='2';
