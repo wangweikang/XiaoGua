@@ -21,7 +21,7 @@
 > gunicorn --log-level debug --access-logfile gunicorn.log --worker-class=gevent -t 999 redis_chat81:app
 
 
-
+###################################################################################
 由于 gunicorn 会捕捉 flask 的错误输出(比如 500 的异常错误信息)
 所以我们无法在 flask 出错的时候(500 错误)看到具体的信息
 
