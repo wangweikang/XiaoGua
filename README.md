@@ -21,3 +21,5 @@ Python OK
 ## [redis 快速](http://www.yiibai.com/redis/redis_quick_guide.html)
 
 ## [Python技术文章的收集](http://pyzh.readthedocs.io/en/latest/index.html)
+
+## [Mysql常用SQL语句集锦](https://gold.xitu.io/post/584e7b298d6d81005456eb53)
