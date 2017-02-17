@@ -25,3 +25,5 @@ Python OK
 ## [Mysql常用SQL语句集锦](https://gold.xitu.io/post/584e7b298d6d81005456eb53)
 
 ## [常用算法总结](https://github.com/wangweikang/StydyPython/blob/master/Algorithms.md)
+
+## [git-简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
