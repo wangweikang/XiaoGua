@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        .gua-dx {
+            position: relative;
+            width: 200px;
+            height: 30px;
+            overflow: hidden;
+        }
+        .gua-bg {
+            position: absolute;
+            top: 0;
+            width: 200px;
+            height: 10px;
+            background: yellow;
+        }
+        .gua-fg {
+            position: absolute;
+            bottom: 0;
+            width: 200px;
+            height: 20px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="gua-dx">
+        <div class="gua-bg"></div>
+        <div class="gua-fg"></div>
+    </div>
+</body>
+<script>
+    var log = console.log.bind(console)
+    var e = sel => document.querySelector(sel)
+    var pos = ele => parseInt(ele.style.left.slice(0, -2))
+    var setPos = (ele, x) => ele.style.left = x + 'px'
+
+    var bar = e('.gua-fg')
+
+    bar.style.left = '0px'
+    var guaMoving = false
+    var initX = 0
+    var initLeft
+    e('.gua-fg').addEventListener('mousedown', event => {
+        guaMoving = true
+        initX = event.clientX
+        initLeft = pos(bar)
+    })
+
+    e('.gua-fg').addEventListener('mousemove', event => {
+        if (guaMoving) {
+            var offset = event.clientX - initX
+            setPos(bar, initLeft + offset)
+        }
+    })
+
+    e('.gua-fg').addEventListener('mouseup', event => {
+        guaMoving = false
+    })
+</script>
+</html>
