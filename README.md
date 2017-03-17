@@ -27,3 +27,5 @@ Python OK
 ## [常用算法总结](https://github.com/wangweikang/StydyPython/blob/master/Algorithms.md)
 
 ## [git-简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
+
+## [MongoDB学习笔记](https://github.com/qianjiahao/MongoDB)
