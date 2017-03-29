@@ -177,3 +177,15 @@ if __name__ == '__main__':
     )
     # 如果不了解 **kwargs 的用法, 上过基础课的请复习函数, 新同学自行搜索
     run(**config)
+
+    number = order.amount / order.commodity.recommend_fee
+        fee = order.commodity.recommend_fee / 10
+        if number < 1:
+            number = 1
+        create_in_qty_user_gift_entry(
+            order.referer_user_id,
+            User.DOCTOR,
+            source_id=order.id,
+            source_type=UserGiftEntry.QPGSHOP_RECOMMEND,
+            gift_id=1,
+            amount=number * fee,
