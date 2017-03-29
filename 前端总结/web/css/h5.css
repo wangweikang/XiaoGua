@@ -1,0 +1,137 @@
+.header {
+    height: 10vh;
+}
+
+.baoTitle {
+    width: 80%;
+}
+
+.main-title {
+    font-size: 1.5rem;
+}
+
+.main-font {
+    font-size: 1rem;
+}
+
+.me-2 {
+    line-height: 2rem;
+}
+
+.fontfamily-1 {
+    letter-spacing: 0.3rem;
+}
+
+.main-article {
+    font-size: 1rem;
+}
+
+.dian {
+    width: 1.7rem;
+    margin: 0.6rem;
+}
+
+.main-one {
+    transform: translate(-50%,-55%);
+}
+
+.next, .prev {
+    font-size: 1rem;
+    transform: translateY(630%);
+}
+
+.about-music {
+    width: 54vw;
+    height: 58vh;
+    left: 50%;
+    transform: translate(-50%,-65%);
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.music-introduce {
+    width: 85vw;
+    height: 20rem;
+    transform: translate(-43%,-65%);
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+
+.introduce-title {
+    font-size: 1.2rem;
+}
+
+.introduce-article {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.music-button {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #a1c7f1;
+    background-color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    bottom: -100px;
+    left: 51%;
+    transform: translate(-50%,300%);
+    text-decoration: none;
+    position: absolute;
+}
+
+.work-photo {
+    width: 83vw;
+    height: 40vh;
+    left: 9%;
+    box-shadow: 5px 5px 29px black;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.photo-introduce {
+    background-color: black;
+    width: 80vw;
+    height: 48vh;
+    /* box-shadow: 5px 5px 29px #333333; */
+    left: 10%;
+    border-radius: 1rem;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.banner-button {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: black;
+    background-color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    bottom: 10%;
+    left: 51%;
+    transform: translate(-50%,-10%);
+    text-decoration: none;
+    position: absolute;
+}
+
+.notShow {
+    opacity: 0;
+}
+
+.theme-article {
+    display: none;
+}
+
+.allAircle {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+    z-index: 100;
+}
+.theme-color {
+    height: 100vh;
+}
+.noShow {
+    display: none;
+}

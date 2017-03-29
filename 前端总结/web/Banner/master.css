@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: black;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.b {
+    width: 100%;
+    height: 10vh;
+}
+
+.box-reflect {
+    position: relative;
+    display: inline-block;
+    left: 35%;
+    width: 113rem;
+    transition: 1s transform;
+}
+
+.box-reflect img {
+    -webkit-box-reflect: below 0 -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,.0) 30%,rgba(250,250,250,0.45));
+    box-reflect: below 0 -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,.0) 30%,rgba(250,250,250,0.45));
+}
+
+.all {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.in {
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.photo {
+    width: 8rem;
+    height: 6rem;
+    margin-top: 19rem;
+    transition: 1s width, 1s height, 1s margin;
+}
+
+.active {
+    width: 37rem;
+    height: 25rem;
+    margin-top: 0;
+}
+
+.prev {
+    left: 10%;
+}
+.next {
+    right: 10%;
+}
+
+.next,
+.prev {
+    position: absolute;
+    color: white;
+    font-size: 5rem;
+    cursor: pointer;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    background-color: #808080;
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.next:hover,
+.prev:hover {
+    opacity:1 !important;
+}

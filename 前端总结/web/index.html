@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>个人主页</title>
+    <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+    <meta name="author" content="Vincent Garreau" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/h5.css" media='only screen and (max-width:480px)'>
+</head>
+
+<body>
+
+    <!-- particles.js container -->
+    <div id="particles-js">
+    </div>
+
+    <div class="header">
+        <div class="nav">
+            <ul>
+                <a class="nav-a" href="#">
+                    <li id='nav-0' data-nav=0 class="nav-li highlight">首页</li>
+                </a>
+                <a  class="nav-a" href="#">
+                    <li id='nav-1' data-nav=1 class="nav-li">音乐</li>
+                </a>
+                <a  class="nav-a" href="#">
+                    <li id='nav-2' data-nav=2 class="nav-li">图片</li>
+                </a>
+                <a  class="nav-a" href="#">
+                    <li id='nav-3' data-nav=3 class="nav-li">清单</li>
+                </a>
+                <line></line>
+            </ul>
+        </div>
+    </div>
+    <div class="content" data-page=0>
+        <div id=a-0 class="page-mian page">
+            <div class="main-content"  data-article=3 data-sections=0>
+                <div class="allSection vertical-center" data-active=0>
+                    <div id='section-0' class="section">
+                        <div class="photo-0">
+                        </div>
+                        <div class="baoTitle main-one">
+                            <h1 class="main-title write noShow">LEAD THE WAY</h1>
+                            <h1 class="main-font write-1 fontfamily-0 noShow">Hello，I am funyear.Welcome to my page.</h1>
+                        </div>
+
+                    </div>
+                    <div id='section-1' class="section ">
+                        <div class="photo-1">
+                        </div>
+                        <div class="baoTitle me">
+                        <h1 class="main-title me-1">About me</h1>
+                        <h1 class="main-article me-2 fontfamily-1">
+
+                             勤快、高效的90后<br>
+                            Web 前端开发工程师 <br>
+                            热爱编程 喜欢JavaScript <br>
+                            假如生活欺骗了你，不要悲伤不要心急。<br>
+                            《代码大全》会一直陪伴着你☺ ...<br>
+                        </h1>
+                        </div>
+                    </div>
+                    <div id='section-2' class="section ">
+                        <div class="photo-2">
+                        </div>
+                        <div class="baoTitle  main-one">
+                        <h1 class="main-title">随时准备出发。</h1>
+                        <h1 class="main-font fontfamily-0">Be ready at any time.</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <span class="prev">＜</span>
+                    <span class="next">＞</span>
+                </div>
+                <div class="tiao">
+                    <div data-index=0 id='dian-0' class="dian active">
+                    </div>
+                    <div data-index=1 id='dian-1' class="dian">
+                    </div>
+                    <div data-index=2 id='dian-2' class="dian">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id=a-1 class="page-about page">
+            <div class="photo-4">
+            </div>
+            <div class="about-content vertical-center-1">
+                <div class="about-article">
+                    <img class='about-music vertical-center' src="img/music6.gif" alt="">
+               </div>
+               <div class="music-introduce vertical-center shadow notShow">
+                   <div class="introduce-title">
+                       Music Player
+                   </div>
+                  <div class="introduce-article color">
+                     JS : ES6 模板字符串等新特性 写出健壮的代码 <br>
+                     优点 : 只需导入歌曲信息即可自动渲染播放器<br>
+                     HTML5 : audio标签<br>
+                     CSS3： translate、animation等新特性<br>
+                     运用高斯模糊渲染播放器背景<br>
+                     功能 : 播放、暂停、切换音乐、更改音乐进度、循环播放、查看播放列表、收藏<br>
+                  </div>
+               </div>
+               <span class='music-button'>Read More</span>
+            </div>
+        </div>
+        <div id=a-2 class="page-work page">
+            <div class="photo-introduce vertical-center shadow-1 notShow">
+                <div class="photo-title">
+                    Banner
+                </div>
+                <div class="photo-article color-2">
+                   运用原生JavaScript，基于CSS3新特性实现网页 轮播图 构件 <br>
+                </div>
+            </div>
+            <div class="banner">
+                <img class='work-photo vertical-center' src="img/banner.gif" alt="">
+            </div>
+            <span class='banner-button'>Read More</span>
+        </div>
+        <div id=a-3 class="page-content page">
+            <!-- <div class="content-article vertical-center">
+                More projects are on the way ...
+            </div> -->
+            <!-- themes -->
+            <div class="themes">
+                <div class="center" data-all=3 data-theme=0>
+                    <div class="theme">
+                        <span id=theme-0 class="theme-color slider-active"></span>
+                        <span id=theme-1 class="theme-color"></span>
+                        <span id=theme-2 class="theme-color"></span>
+                    </div>
+                    <div class="theme-article">
+                        <h1 class="todo">TODO</h1>
+                        <h3 class="todo-font">多主题</h3>
+                        <p class="todo-font-1">管理任务也要赏心悦目。</p>
+                    </div>
+                    <div class="unslider">
+                        <div class="allAircle">
+                            <span id=circle-0 data-index="0" class="circle"></span>
+                            <span id=circle-1 data-index="1" class="circle"></span>
+                            <span id=circle-2 data-index="2" class="circle"></span>
+                        </div>
+                        <div class="slider" >
+                            <div class="bg-imgs">
+                                <img class=" phone" src="img/phone.jpg">
+                            </div>
+                            <div class="theme-photo">
+                                <span class="black-photo img slider-active">
+                                    <img id=img-0 class="lazy" src="img/0.png">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /themes -->
+        </div>
+    </div>
+    <div class="footer">
+        <div class="nextPage">
+            ︾
+        </div>
+    </div>
+
+    <!-- particles -->
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/lib/stats.js"></script>
+
+    <script src='js/master.js'></script>
+
+</body>
+</html>

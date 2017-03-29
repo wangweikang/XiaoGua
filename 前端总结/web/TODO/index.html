@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>TODO</title>
+        <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/todo.css" media="screen" title="no title">
+    </head>
+    <body>
+        <div class="todo">
+            <div class="index">
+                <div class="logo">
+                    <img src="img/rabbit.jpg" alt="logo">
+                </div>
+                <div class="task list">
+                    <i class="task-list fa fa-tasks"></i>任务
+                </div>
+                <div class="theme list-0">
+                    <i class="themestar fa fa-star-half-o" aria-hidden="true"></i>主题
+                </div>
+                <div class="theme-color">
+                    <div id="theme-0" class='themeTiao'>
+                        <i class="color fa fa-square" aria-hidden="true"></i>
+                    </div>
+                    <div id="theme-1" class='themeTiao'>
+                        <i class="color fa fa-square" aria-hidden="true"></i>
+                    </div>
+                    <div id="theme-2" class='themeTiao'>
+                        <i class="color fa fa-square" aria-hidden="true"></i>
+                    </div>
+                    <div class="shou">
+                        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="contains">
+                <div class="info">
+                    <span class="date">My Todo</span>
+                </div>
+                <div class="todo-task">
+                    <div class="add-task">
+                        <form class='input'>
+                            <input id=id-input-add type="text" name="name" placeholder="按Enter完成输入" required>
+                        </form>
+                        <span id=id-newTodo>
+                            <i class="fa fa-plus-circle"></i>
+                        </span>
+                    </div>
+                    <div class="any">
+                        <line></line>
+                        <time class="timeTite">
+                            <i class="yuan fa fa-circle"></i>
+                            <span class='time-tite'></span>
+                        </time>
+                        <div id="id-div-container" >
+                            <div class="todo-cell">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/todo.js"></script>
+    </body>
+</html>
