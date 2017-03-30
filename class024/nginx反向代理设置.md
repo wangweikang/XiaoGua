@@ -1,4 +1,4 @@
-##Nginx
+## Nginx
 
 安装:apt-get install ngnix
 
@@ -10,12 +10,13 @@
 
 引入配置文件:/etc/nginx/sites-enabled/*
 
-> 可以将我们的web配置放在这个目录下 
+> 可以将我们的web配置放在这个目录下
 
 例子：
 ```python
 server {
-    server_name localhost;你的域名
+    server_name localhost;你的域
+    名
     listen 80 default_server;
     listen [::]:80 default_server ipv6only=on;
 
