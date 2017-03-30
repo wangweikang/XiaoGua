@@ -6,7 +6,7 @@ const e = function(selector) {
     return document.querySelector(selector)
 }
 
-const es = function (sel) {
+const es = function(sel) {
     return document.querySelectorAll(sel)
 }
 
@@ -20,7 +20,7 @@ const bindEvent = function(element, eventName, callback) {
 
 const bindAll = function(selector, eventName, callback) {
     var elements = document.querySelectorAll(selector)
-    for(var i = 0; i < elements.length; i++) {
+    for (var i = 0; i < elements.length; i++) {
         var e = elements[i]
         bindEvent(e, eventName, callback)
     }
@@ -36,14 +36,14 @@ const removeClassAll = function(className) {
 }
 
 const goNext = function(newIndex) {
-	var s = e ('.section')
-	var father = s.parentElement
+    var s = e('.section')
+    var father = s.parentElement
     var grandpa = father.parentElement
-	var newId = '#dian-'+ String(newIndex)
-	var className = 'active'
-	removeClassAll(className)
-	var c = e(newId)
-	c.classList.add(className)
+    var newId = '#dian-' + String(newIndex)
+    var className = 'active'
+    removeClassAll(className)
+    var c = e(newId)
+    c.classList.add(className)
     var n = (-100) * (newIndex)
     // console.log('n', n);
     e('.allSection').style.transform = `translate(${n}vw, -50%)`;
@@ -84,7 +84,7 @@ const goPage = function(index) {
 }
 
 const playNext = function() {
-    var s = e ('.section')
+    var s = e('.section')
     var father = s.parentElement
     var grandpa = father.parentElement
     var zongUu = parseInt(grandpa.dataset.article)
@@ -95,20 +95,20 @@ const playNext = function() {
 
 
 const bindTiao = function() {
-	var selector = '.dian'
-	bindAll(selector, 'click', function(event){
-		var target = event.target
-		var id = parseInt(target.dataset.index)
-		var newIndex = '#section-'+ String(id)
-		var className = 'active'
-		removeClassAll(className)
-		target.classList.add(className)
+    var selector = '.dian'
+    bindAll(selector, 'click', function(event) {
+        var target = event.target
+        var id = parseInt(target.dataset.index)
+        var newIndex = '#section-' + String(id)
+        var className = 'active'
+        removeClassAll(className)
+        target.classList.add(className)
         var n = (-100) * (id)
         e('.allSection').style.transform = `translate(${n}vw, -50%)`;
         var father = target.parentElement
         var grandpa = father.parentElement
         grandpa.dataset.sections = id
-	})
+    })
 }
 
 const bindHeader = function() {
@@ -116,14 +116,14 @@ const bindHeader = function() {
     bindAll(selector, 'click', function(event) {
         var target = event.target
         var newIndex = parseInt(target.dataset.nav)
-        var newId = '#nav-'+ String(newIndex)
-    	var className = 'highlight'
-    	removeClassAll(className)
-    	var c = e(newId)
-    	c.classList.add(className)
+        var newId = '#nav-' + String(newIndex)
+        var className = 'highlight'
+        removeClassAll(className)
+        var c = e(newId)
+        c.classList.add(className)
     })
 
-    bindAll(selector, 'click', function(event){
+    bindAll(selector, 'click', function(event) {
         var target = event.target
         var newIndex = parseInt(target.dataset.nav)
         goPage(newIndex)
@@ -131,7 +131,7 @@ const bindHeader = function() {
 }
 
 const bindWheel = function() {
-    e('body').addEventListener('mousewheel', function(event){
+    e('body').addEventListener('mousewheel', function(event) {
         var content = e('.content')
         var index = parseInt(content.dataset.page)
         if (event.deltaY > 0) {
@@ -146,13 +146,13 @@ const bindWheel = function() {
 
 const bindNextbutton = function() {
     var next = e('.next')
-    bindEvent(next, 'click', function(){
+    bindEvent(next, 'click', function() {
         playNext()
     })
 }
 
 const playPrev = function() {
-    var s = e ('.section')
+    var s = e('.section')
     var father = s.parentElement
     var grandpa = father.parentElement
     var zongUu = parseInt(grandpa.dataset.article)
@@ -161,14 +161,14 @@ const playPrev = function() {
     goNext(newIndex)
 }
 
-const bindPrevbutton =function() {
+const bindPrevbutton = function() {
     var prev = e('.prev')
-    bindEvent(prev, 'click', function(){
+    bindEvent(prev, 'click', function() {
         // var s = e ('.section')
-    	// var father = s.parentElement
+        // var father = s.parentElement
         // var grandpa = father.parentElement
-    	// var zongUu = parseInt(grandpa.dataset.article)
-    	// var index = parseInt(grandpa.dataset.sections)
+        // var zongUu = parseInt(grandpa.dataset.article)
+        // var index = parseInt(grandpa.dataset.sections)
         // var newIndex = (index + zongUu - 1) % zongUu
         // goNext(newIndex)
         playPrev()
@@ -176,16 +176,14 @@ const bindPrevbutton =function() {
 }
 
 
-const themeNew =function(newIndex) {
+const themeNew = function(newIndex) {
     if (newIndex == 0) {
         e('.theme-color').style.background = '#353d40';
         e('.lazy').src = `img/${newIndex}.png`
-    }
-    else if (newIndex == 1) {
+    } else if (newIndex == 1) {
         e('.theme-color').style.background = 'rgba(242, 70, 70, 0.34)';
         e('.lazy').src = `img/${newIndex}.png`
-    }
-    else if (newIndex == 2) {
+    } else if (newIndex == 2) {
         e('.theme-color').style.background = 'rgba(118, 195, 221, 0.73)';
         e('.lazy').src = `img/${newIndex}.png`
     }
@@ -193,20 +191,20 @@ const themeNew =function(newIndex) {
 }
 
 const bindYuan = function() {
-	var selector = '.circle'
-	bindAll(selector, 'click', function(event){
-		var target = event.target
-		var newIndex = parseInt(target.dataset.index)
+    var selector = '.circle'
+    bindAll(selector, 'click', function(event) {
+        var target = event.target
+        var newIndex = parseInt(target.dataset.index)
         themeNew(newIndex)
         var father = target.parentElement
         var grandpa = father.parentElement
         var grandpapa = grandpa.parentElement
         grandpapa.dataset.theme = newIndex
-	})
+    })
 }
 
 const themeNext = function() {
-    var s = e ('.theme-color')
+    var s = e('.theme-color')
     var father = s.parentElement
     var grandpa = father.parentElement
     var zongUu = parseInt(grandpa.dataset.all)
@@ -218,7 +216,7 @@ const themeNext = function() {
 
 const bindNtbutton = function() {
     var button = e('.nextPage')
-    bindEvent(button, 'click', function(event){
+    bindEvent(button, 'click', function(event) {
         goNextPage()
     })
 }
@@ -226,12 +224,12 @@ const bindNtbutton = function() {
 const bindButton = function() {
     var musicButton = e('.music-button')
     var bannerButton = e('.banner-button')
-    bindEvent(musicButton, 'click', function(){
+    bindEvent(musicButton, 'click', function() {
         e('.music-introduce').classList.toggle('notShow')
         e('.about-article').classList.toggle('notShow')
     })
 
-    bindEvent(bannerButton, 'click', function(){
+    bindEvent(bannerButton, 'click', function() {
         e('.photo-introduce').classList.toggle('notShow')
         e('.work-photo').classList.toggle('notShow')
     })
@@ -247,7 +245,7 @@ const show = function() {
 
 //  检测滑动方向
 const angleBySlide = function(dx, dy) {
-    return Math.atan2(dy,dx) * 180 / Math.PI
+    return Math.atan2(dy, dx) * 180 / Math.PI
 }
 
 // 判断方向
@@ -281,17 +279,17 @@ const judgeDirection = function(sX, sY, eX, eY) {
 const bindSlideEvent = function() {
     var startX, startY
 
-    e('.content').addEventListener('touchstart', function(event){
+    e('.content').addEventListener('touchstart', function(event) {
         // console.log('touchstart', event);
         startX = event.touches[0].pageX
         startY = event.touches[0].pageY
     })
 
-    e('.content').addEventListener('touchmove', function(event){
+    e('.content').addEventListener('touchmove', function(event) {
         event.preventDefault()
     })
 
-    e('.content').addEventListener('touchend', function(event){
+    e('.content').addEventListener('touchend', function(event) {
         var endX = event.changedTouches[0].pageX;
         var endY = event.changedTouches[0].pageY;
 
@@ -340,7 +338,7 @@ const init = function() {
     setTimeout(show, 2000)
 }
 
-const __main = function(){
+const __main = function() {
     bindall()
     init()
 }

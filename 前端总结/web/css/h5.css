@@ -32,7 +32,7 @@
 }
 
 .main-one {
-    transform: translate(-50%,-55%);
+    transform: translate(-50%, -55%);
 }
 
 .next, .prev {
@@ -44,7 +44,7 @@
     width: 54vw;
     height: 58vh;
     left: 50%;
-    transform: translate(-50%,-65%);
+    transform: translate(-50%, -65%);
     opacity: 1;
     transition: opacity 1s;
 }
@@ -52,11 +52,10 @@
 .music-introduce {
     width: 85vw;
     height: 20rem;
-    transform: translate(-43%,-65%);
+    transform: translate(-43%, -65%);
     opacity: 1;
     transition: opacity 1s;
 }
-
 
 .introduce-title {
     font-size: 1.2rem;
@@ -76,7 +75,7 @@
     border-radius: 0.5rem;
     bottom: -100px;
     left: 51%;
-    transform: translate(-50%,300%);
+    transform: translate(-50%, 300%);
     text-decoration: none;
     position: absolute;
 }
@@ -110,7 +109,7 @@
     border-radius: 0.5rem;
     bottom: 10%;
     left: 51%;
-    transform: translate(-50%,-10%);
+    transform: translate(-50%, -10%);
     text-decoration: none;
     position: absolute;
 }
@@ -129,9 +128,11 @@
     top: 10%;
     z-index: 100;
 }
+
 .theme-color {
     height: 100vh;
 }
+
 .noShow {
     display: none;
 }

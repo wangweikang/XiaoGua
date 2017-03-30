@@ -6,7 +6,7 @@
 }
 
 html, body, .todo {
-    background:#fff;
+    background: #fff;
     height: 100%;
 }
 
@@ -22,6 +22,8 @@ html, body, .todo {
     background: #353d40;
     transition: color 0.8s ease, background 0.8s ease;
 }
+
+
 /*
 .index-1 {
     flex-grow: 1;
@@ -40,10 +42,9 @@ html, body, .todo {
 .logo {
     text-align: center;
     margin: 20px 0px;
+}
 
- }
-
-.logo > img {
+.logo>img {
     border-radius: 1rem;
     width: 4rem;
     height: 4rem;
@@ -59,6 +60,8 @@ html, body, .todo {
     color: #00bff3;
     transition: color 0.8s ease, background 0.8s ease;
 }
+
+
 /*
 .list-1 {
     background: rgba(242, 70, 70, 0.6);
@@ -127,6 +130,7 @@ html, body, .todo {
     transition: overflow 0.8s ease, height 0.8s ease;
 }
 
+
 /*.theme-o {
     opacity: 1 !important;
 }*/
@@ -155,11 +159,11 @@ html, body, .todo {
     color: #353d40;
     margin-left: 1rem;
     font-size: 2rem;
-    font-family:'KyoMadoka', serif;
+    font-family: 'KyoMadoka', serif;
     transition: color 0.8s ease;
-
     /*font-style: italic;*/
 }
+
 
 /*.date-1 {
     margin-left: 1rem;
@@ -194,7 +198,7 @@ html, body, .todo {
 }
 
 .contains {
-    color:#999999;
+    color: #999999;
     position: relative;
 }
 
@@ -215,12 +219,12 @@ html, body, .todo {
     transform: translateX(20%);
 }
 
-.add-task > span > i {
+.add-task>span>i {
     margin-left: 50px;
     margin-right: 10px;
 }
 
-.add-task > span:hover {
+.add-task>span:hover {
     text-shadow: 0px 0px 2px lightgray;
 }
 
@@ -235,11 +239,12 @@ html, body, .todo {
     width: 183px;
     /*position: relative;*/
     /*top: -10px;*/
-    margin-left:1rem;
+    margin-left: 1rem;
     box-shadow: 0px 0px 5px gray;
     transform: translateY(-20%);
 }
-.none{
+
+.none {
     display: none;
 }
 
@@ -255,7 +260,7 @@ line {
     /*left: 60px;*/
     z-index: 0;
     /*left: 4.3rem;*/
-    left:3.7rem;
+    left: 3.7rem;
 }
 
 .timeTite {
@@ -278,43 +283,44 @@ line {
     font-size: 1rem;
     color: black;
 }
- .todo-cell {
-     margin-left: 9px;
-     /*height: 52px;*/
-     line-height: 52px;
-     color: black;
-     position: relative;
- }
+
+.todo-cell {
+    margin-left: 9px;
+    /*height: 52px;*/
+    line-height: 52px;
+    color: black;
+    position: relative;
+}
+
 .todo-delete {
     right: 5px;
     top: 34%;
     position: absolute;
 }
+
 .done {
-     color: gray;
-     text-decoration: line-through;
- }
+    color: gray;
+    text-decoration: line-through;
+}
 
 .thingTime {
     color: #999999;
     margin-left: 0;
     font-size: 13px;
-
 }
 
 .todo-check {
-     font-size: 30px;
-     /*margin-right: 10px;*/
-     position: relative;
-     top: 5px;
-     z-index: 50;
-     color: #ef662f;
-     background: white;
-     /*left: 0.1rem;*/
- }
+    font-size: 30px;
+    /*margin-right: 10px;*/
+    position: relative;
+    top: 5px;
+    z-index: 50;
+    color: #ef662f;
+    background: white;
+    /*left: 0.1rem;*/
+}
 
 .todo-content {
     /*word-wrap:break-word;*/
     font-size: 14px;
-
 }

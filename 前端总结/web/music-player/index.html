@@ -1,93 +1,96 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-		<title>music</title>
-		<link rel="stylesheet" href="css/music.css">
-	</head>
-	<body>
-		<div class="background">
-			<img id='photo' class='img' src="img/0.jpg" >
-			<img id='sPhoto' class='two-img' src="img/0.jpg">
-		</div>
-		<div class="music">
-			<audio id='id-audio-player' data-now=0>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<title>music</title>
+	<link rel="stylesheet" href="css/music.css">
+</head>
+
+<body>
+	<div class="background">
+		<img id='photo' class='img' src="img/0.jpg">
+		<img id='sPhoto' class='two-img' src="img/0.jpg">
+	</div>
+	<div class="music">
+		<audio id='id-audio-player' data-now=0>
 				<source src="mp3/1.mp3">
 			</audio>
-			<div class="controls">
-				<input type="range" class='range' value="0">
-				<span id='nowTime'>00:00</span>
-				<span id='time'></span>
-				<div class="">
-					<span class="heart">
+		<div class="controls">
+			<input type="range" class='range' value="0">
+			<span id='nowTime'>00:00</span>
+			<span id='time'></span>
+			<div class="">
+				<span class="heart">
 						❤
 					</span>
-					<span class='list'>☲</span>
-				</div>
-				<div class="h3">
-					<div id='name-0' class="name active">Young Homie</div>
-					<div id='name-1' class='name'>贝加尔湖畔</div>
-					<div id='name-2' class='name'>我要你</div>
-                    <div id='name-3' class='name'>依恋</div>
-                    <div id='name-4' class='name'>我们不该这样的</div>
-                    <div id='name-5' class='name'>意外</div>
-                    <div id='name-6' class='name'>岁月神偷</div>
-				</div>
-				<div class="h4">
-					<div id='name1-0' class="name action">Chirs Rene</div>
-					<div id='name1-1' class='name'>塔斯肯</div>
-					<div id='name1-2' class='name'>任素汐</div>
-                    <div id='name1-3' class='name'>蔡淳佳</div>
-                    <div id='name1-4' class='name'>张赫宣</div>
-                    <div id='name1-5' class='name'>薛之谦</div>
-                    <div id='name1-6' class='name'>金玟岐</div>
-				</div>
-				<div id="prevSong"  style="margin: 20px 0px 10px 85px;">
-					<div id='shangSong'>
-						◁
-					</div>
-				</div>
-				<div id="action" class="now circle actives" style="margin: 20px 0px 10px 20px;">
-					<div class="circle_inner_play">
-					</div>
-				</div>
-				<div id="stop" class="now circle" style="margin: 20px 0px 10px 20px;">
-					<div class="circle_inner_pause">
-						▐▐
-					</div>
-				</div>
-				<div id="lastSong"  style="margin: 20px 0px 10px 85px;">
-					<div id='nextSong'>
-						▷
-					</div>
+				<span class='list'>☲</span>
+			</div>
+			<div class="h3">
+				<div id='name-0' class="name active">Young Homie</div>
+				<div id='name-1' class='name'>贝加尔湖畔</div>
+				<div id='name-2' class='name'>我要你</div>
+				<div id='name-3' class='name'>依恋</div>
+				<div id='name-4' class='name'>我们不该这样的</div>
+				<div id='name-5' class='name'>意外</div>
+				<div id='name-6' class='name'>岁月神偷</div>
+			</div>
+			<div class="h4">
+				<div id='name1-0' class="name action">Chirs Rene</div>
+				<div id='name1-1' class='name'>塔斯肯</div>
+				<div id='name1-2' class='name'>任素汐</div>
+				<div id='name1-3' class='name'>蔡淳佳</div>
+				<div id='name1-4' class='name'>张赫宣</div>
+				<div id='name1-5' class='name'>薛之谦</div>
+				<div id='name1-6' class='name'>金玟岐</div>
+			</div>
+			<div id="prevSong" style="margin: 20px 0px 10px 85px;">
+				<div id='shangSong'>
+					◁
 				</div>
 			</div>
-            <div class="gray">
-            </div>
-            <div class="songList move">
-                <span class="list-title">播放列表</span>
-                <span class="xian"></span>
-                <div class='song-title '>
-                    <span id='title-0' class='songtitle' data-path=0>Young Homie-Chirs Rene</span>
-                    <span class="xian"></span>
-                    <span id='title-1' class='songtitle' data-path=1>贝加尔湖畔-塔斯肯</span>
-                    <span class="xian"></span>
-                    <span id='title-2' class='songtitle'  data-path=2>我要你 -任素汐 </span>
-                    <span class="xian"></span>
-                    <span id='title-3' class='songtitle'  data-path=3>依恋-蔡淳佳</span>
-                    <span class="xian"></span>
-                    <span id='title-4' class='songtitle'  data-path=4>我们不该这样的-张赫宣 </span>
-                    <span class="xian"></span>
-                    <span id='title-5' class='songtitle'  data-path=5>意外-薛之谦</span>
-                    <span class="xian"></span>
-                    <span id='title-6' class='songtitle'  data-path=6> 岁月神偷 -金玟岐</span>
-                    <span class="xian"></span>
-                </div>
-            </div>
+			<div id="action" class="now circle actives" style="margin: 20px 0px 10px 20px;">
+				<div class="circle_inner_play">
+				</div>
+			</div>
+			<div id="stop" class="now circle" style="margin: 20px 0px 10px 20px;">
+				<div class="circle_inner_pause">
+					▐▐
+				</div>
+			</div>
+			<div id="lastSong" style="margin: 20px 0px 10px 85px;">
+				<div id='nextSong'>
+					▷
+				</div>
+			</div>
 		</div>
-		<script src="js/master.js"></script>
-	</body>
+		<div class="gray">
+		</div>
+		<div class="songList move">
+			<span class="list-title">播放列表</span>
+			<span class="xian"></span>
+			<div class='song-title '>
+				<span id='title-0' class='songtitle' data-path=0>Young Homie-Chirs Rene</span>
+				<span class="xian"></span>
+				<span id='title-1' class='songtitle' data-path=1>贝加尔湖畔-塔斯肯</span>
+				<span class="xian"></span>
+				<span id='title-2' class='songtitle' data-path=2>我要你 -任素汐 </span>
+				<span class="xian"></span>
+				<span id='title-3' class='songtitle' data-path=3>依恋-蔡淳佳</span>
+				<span class="xian"></span>
+				<span id='title-4' class='songtitle' data-path=4>我们不该这样的-张赫宣 </span>
+				<span class="xian"></span>
+				<span id='title-5' class='songtitle' data-path=5>意外-薛之谦</span>
+				<span class="xian"></span>
+				<span id='title-6' class='songtitle' data-path=6> 岁月神偷 -金玟岐</span>
+				<span class="xian"></span>
+			</div>
+		</div>
+	</div>
+	<script src="js/master.js"></script>
+</body>
+
 </html>

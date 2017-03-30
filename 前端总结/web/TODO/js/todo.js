@@ -1,4 +1,3 @@
-
 const log = function() {
     console.log.apply(console, arguments)
 }
@@ -7,7 +6,7 @@ const e = function(selector) {
     return document.querySelector(selector)
 }
 
-const es = function (sel) {
+const es = function(sel) {
     return document.querySelectorAll(sel)
 }
 
@@ -17,7 +16,7 @@ const bindEvent = function(element, eventName, callback) {
 
 const bindAll = function(selector, eventName, callback) {
     var elements = document.querySelectorAll(selector)
-    for(var i = 0; i < elements.length; i++) {
+    for (var i = 0; i < elements.length; i++) {
         var e = elements[i]
         bindEvent(e, eventName, callback)
     }
@@ -46,17 +45,17 @@ const nowTime = function() {
     var yt = d.getMonth() + 1
     var ri = d.getDate()
     var week = d.getDay()
-    var array = ['日','一','二','三','四','五','六']
+    var array = ['日', '一', '二', '三', '四', '五', '六']
     var weeks = array[week]
     var time = `${nm}-${yt}-${ri} 星期${weeks}`
-    log('time',time)
+    log('time', time)
     // e('.date').innerHTML = `${time}`
     e('.time-tite').innerHTML = `${time}`
 }
 
 const bindAdd = function() {
     var addButton = e('#id-newTodo')
-    addButton.addEventListener('click', function(){
+    addButton.addEventListener('click', function() {
         var todoInput = e('#id-input-add')
         var todo = todoInput.value
         insertTodo(todo, false)
@@ -77,10 +76,10 @@ const templateTodo = function(todo, done) {
     var d = new Date()
     var hours = d.getHours()
     var minutes = d.getMinutes()
-    if(hours < 10) {
+    if (hours < 10) {
         hours = `0${hours}`
     }
-    if(minutes < 10) {
+    if (minutes < 10) {
         minutes = `0${minutes}`
     }
     var time = `${hours}:${minutes}`
@@ -90,10 +89,10 @@ const templateTodo = function(todo, done) {
 
 const bindDonedelete = function() {
     var todoContainer = e('#id-div-container')
-    todoContainer.addEventListener('click', function(event){
+    todoContainer.addEventListener('click', function(event) {
         // log('container click', event, event.target)
         var target = event.target
-        if(target.classList.contains('todo-done')) {
+        if (target.classList.contains('todo-done')) {
             // log('done')
             var todoDiv = target.parentElement
             toggleClass(todoDiv, 'done')
@@ -109,19 +108,19 @@ const bindDonedelete = function() {
     })
 }
 
-const bindTheme =function() {
+const bindTheme = function() {
     var selector = e('.theme')
     bindEvent(selector, 'click', function() {
-    // var classname = e('.theme-o')
-    // e('.theme-color').classList.toggle(classname)
-    var se = e('.theme-color')
-    se.style.height = '180px';
+        // var classname = e('.theme-o')
+        // e('.theme-color').classList.toggle(classname)
+        var se = e('.theme-color')
+        se.style.height = '180px';
     })
 
     var shang = e('.shou')
     bindEvent(shang, 'click', function() {
-    var se = e('.theme-color')
-    se.style.height = '0px';
+        var se = e('.theme-color')
+        se.style.height = '0px';
     })
 
 }
@@ -196,14 +195,14 @@ const saveTodos = function() {
 
 const insertlocalTodo = function(todo, done, time) {
     var todoContainer = e('#id-div-container')
-    var t = localTodo(todo, done,time)
+    var t = localTodo(todo, done, time)
     todoContainer.insertAdjacentHTML('beforeend', t);
 }
 
-const localTodo = function(todo, done,time) {
+const localTodo = function(todo, done, time) {
     var status = ''
     var gou = 'fa-circle-thin'
-    if(done) {
+    if (done) {
         status = 'done'
         gou = 'fa-check-circle-o'
     }
@@ -228,7 +227,7 @@ const loadTodos = function() {
     // log('t', todo.time)
 }
 
-const init =function() {
+const init = function() {
     nowTime()
     loadTodos()
 }
