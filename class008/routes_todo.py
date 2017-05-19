@@ -42,7 +42,6 @@ def route_add(request):
     # headers = {
     #     'Content-Type': 'text/html',
     # }
-    # 创建微博
     form = request.form()
     o = Todo(form)
     o.save()
@@ -56,7 +55,6 @@ def route_complete(request):
     # username = current_user(request)
     # header = response_with_headers(headers)
     # user = User.find_by(username=username)
-    # 删除微博
     id = int(request.query.get('id', -1))
     o = Todo.find(id)
     o.toggleComplete()

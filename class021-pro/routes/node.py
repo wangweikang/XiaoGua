@@ -15,9 +15,7 @@ def admin_required(f):
     @wraps(f)
     def function(*args, **kwargs):
         # your code
-        print('admin required')
         if request.args.get('uid') != '1':
-            print('not admin')
             abort(404)
         return f(*args, **kwargs)
     return function
