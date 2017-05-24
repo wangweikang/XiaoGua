@@ -15,8 +15,6 @@ https://filezilla-project.org/download.php?type=client
 
 
 2 上传代码
-上课讲
-
 
 3 服务器软件安装
 # 给服务器安装连接软件（服务商默认安装好的）
