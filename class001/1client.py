@@ -43,4 +43,4 @@ while True:
     print('响应', r.decode('utf-8'))
     # 转成 str 再输出
     # print('响应的 str 格式', r.decode('utf-8'))
-#print('响应', response.decode('utf-8'))
+
