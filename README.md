@@ -22,7 +22,7 @@ Python OK
 
 ## [Python技术文章的收集](http://pyzh.readthedocs.io/en/latest/index.html)
 
-## [Mysql常用SQL语句集锦](https://gold.xitu.io/post/584e7b298d6d81005456eb53)
+## [Mysql常用SQL语句集锦](https://zhuanlan.zhihu.com/p/24327708)
 
 ## [常用算法总结](https://github.com/wangweikang/StydyPython/blob/master/Algorithms.md)
 
