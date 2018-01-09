@@ -11,7 +11,7 @@ class Tree(object):
         print(self.element)
         if self.left is not None:
             self.left.traversal()
-        if self.right is not None:
+        if self.right is not None:+
             self.right.traversal()
 
     def reverse(self):

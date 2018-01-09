@@ -83,7 +83,6 @@ class Weibo(db.Model, ModelHelper):
         name = db.Column(db.String())
         created_time = db.Column(db.String(), default=0)
 
-
         i.comment = i.comments()
         for j in i.comment:
             j.avatar = j.get_avatar()
