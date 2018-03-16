@@ -48,8 +48,8 @@ def route_index(request):
 
 def response_with_headers(headers):
     """
-Content-Type: text/html
-Set-Cookie: user=gua
+    Content-Type: text/html
+    Set-Cookie: user=gua
     """
     header = 'HTTP/1.x 210 VERY OK\r\n'
     header += ''.join(['{}: {}\r\n'.format(k, v)
