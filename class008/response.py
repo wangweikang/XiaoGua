@@ -28,8 +28,8 @@ def template(name, **kwargs):
 
 def response_with_headers(headers, status_code=200):
     """
-Content-Type: text/html
-Set-Cookie: user=gua
+    Content-Type: text/html
+    Set-Cookie: user=gua
     """
     header = 'HTTP/1.1 {} VERYOK\r\n'.format(status_code)
     header += ''.join(['{}: {}\r\n'.format(k, v)

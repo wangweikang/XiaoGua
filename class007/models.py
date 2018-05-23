@@ -11,14 +11,12 @@ def save(data, path):
     """
     s = json.dumps(data, indent=2, ensure_ascii=False)
     with open(path, 'w+', encoding='utf-8') as f:
-        # log('save', path, s, data)
         f.write(s)
 
 
 def load(path):
     with open(path, 'r', encoding='utf-8') as f:
         s = f.read()
-        # log('load', s)
         return json.loads(s)
 
 
@@ -111,7 +109,8 @@ class Model(object):
         比如 print(u) 实际上是 print(u.__repr__())
         """
         classname = self.__class__.__name__
-        properties = ['{}: ({})'.format(k, v) for k, v in self.__dict__.items()]
+        properties = ['{}: ({})'.format(k, v)
+                      for k, v in self.__dict__.items()]
         s = '\n'.join(properties)
         return '< {}\n{} \n>\n'.format(classname, s)
 
@@ -142,7 +141,6 @@ class Model(object):
                 if m.id == self.id:
                     index = i
                     break
-            log('debug', index)
             models[index] = self
         l = [m.__dict__ for m in models]
         path = self.db_path()
@@ -167,6 +165,7 @@ class User(Model):
     User 是一个保存用户数据的 model
     现在只有两个属性 username 和 password
     """
+
     def __init__(self, form):
         self.id = form.get('id', None)
         self.username = form.get('username', '')
@@ -186,6 +185,7 @@ class Message(Model):
     """
     Message 是用来保存留言的 model
     """
+
     def __init__(self, form):
         self.id = None
         self.author = form.get('author', '')
@@ -195,6 +195,7 @@ class Message(Model):
 class Weibo(Model):
     """
     """
+
     def __init__(self, form):
         # id 是独一无二的一条数据
         # 每个 model 都有自己的 id
@@ -213,6 +214,7 @@ class Weibo(Model):
 class Todo(Model):
     """
     """
+
     def __init__(self, form):
         # id 是独一无二的一条数据
         # 每个 model 都有自己的 id
